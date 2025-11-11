@@ -2,7 +2,6 @@ from __future__ import annotations
 from typing import Callable, Sequence, Optional
 import numpy as np
 import copy
-import matplotlib.pyplot as plt
 
 from uo.algorithm.metaheuristic.population_based_metaheuristic import PopulationBasedMetaheuristic
 from uo.algorithm.output_control import OutputControl

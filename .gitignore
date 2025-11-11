@@ -1,6 +1,11 @@
+# Coverage
+
+.coverage
+coverage.xml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[codz]
+*.py[cod]
 *$py.class
 
 # C extensions
@@ -46,7 +51,7 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
-*.py.cover
+*.py,cover
 .hypothesis/
 .pytest_cache/
 cover/
@@ -94,35 +99,20 @@ ipython_config.py
 #   install all needed dependencies.
 #Pipfile.lock
 
-# UV
-#   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
-#   This is especially recommended for binary packages to ensure reproducibility, and is more
-#   commonly ignored for libraries.
-#uv.lock
-
 # poetry
 #   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
 #   This is especially recommended for binary packages to ensure reproducibility, and is more
 #   commonly ignored for libraries.
 #   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
 #poetry.lock
-#poetry.toml
 
 # pdm
 #   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
-#   pdm recommends including project-wide configuration in pdm.toml, but excluding .pdm-python.
-#   https://pdm-project.org/en/latest/usage/project/#working-with-version-control
 #pdm.lock
-#pdm.toml
-.pdm-python
-.pdm-build/
-
-# pixi
-#   Similar to Pipfile.lock, it is generally recommended to include pixi.lock in version control.
-#pixi.lock
-#   Pixi creates a virtual environment in the .pixi directory, just like venv module creates one
-#   in the .venv directory. It is recommended not to include this directory in version control.
-.pixi
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+.pdm.toml
 
 # PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
 __pypackages__/
@@ -136,7 +126,6 @@ celerybeat.pid
 
 # Environments
 .env
-.envrc
 .venv
 env/
 venv/
@@ -174,34 +163,175 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
-
-# Abstra
-# Abstra is an AI-powered process automation framework.
-# Ignore directories containing user credentials, local state, and settings.
-# Learn more at https://abstra.io/docs
-.abstra/
-
-# Visual Studio Code
-#  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
-#  that can be found at https://github.com/github/gitignore/blob/main/Global/VisualStudioCode.gitignore
-#  and can be added to the global gitignore or merged into this file. However, if you prefer, 
-#  you could uncomment the following to ignore the entire vscode folder
-# .vscode/
-
-# Ruff stuff:
-.ruff_cache/
-
-# PyPI configuration file
-.pypirc
-
-# Cursor
-#  Cursor is an AI-powered code editor. `.cursorignore` specifies files/directories to
-#  exclude from AI features like autocomplete and code analysis. Recommended for sensitive data
-#  refer to https://docs.cursor.com/context/ignore-files
-.cursorignore
-.cursorindexingignore
-
-# Marimo
-marimo/_static/
-marimo/_lsp/
-__marimo__/
+outputs/ones_count_problem/dimension_25-vns-min-2023-07-03-13-39-50.702521.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-54-57.536320.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-54-57.750310.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-57-26.621275.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-57-26.831587.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-01-19.290950.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-01-19.503072.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-02-17.813932.txt
+app/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-02-18.020168.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-06-20-24-52.117075.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-06-20-25-36.514458.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-54-57.536320.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-54-57.750310.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-57-26.621275.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-10-57-26.831587.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-01-19.290950.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-01-19.503072.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-02-17.813932.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_25-vns-max-2023-09-09-11-02-18.020168.txt
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_77-vns-max-2023-07-09-14-57-21.147373.csv
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_77-vns-max-2023-07-09-14-59-24.220923.csv
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_77-vns-max-2023-07-09-18-10-10.370226.csv
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_77-vns-max-2023-07-09-18-10-55.459532.csv
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_77-vns-max-2023-07-10-14-01-40.827858.csv
+app/single_objective_oprimization_problems/trivial/ones_count_problem/outputs/dimension_77-vns-max-2023-07-10-17-15-25.484215.csv
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-13-59-05.771256.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-13-59-05.974697.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-00-11.802660.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-00-12.011624.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-02-24.894136.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-02-25.105222.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-03-43.022750.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-03-43.249521.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-04-23.479934.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-04-23.709187.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-05-27.025902.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-BitArray-vns-max-2023-09-20-14-05-27.285294.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-13-59-05.352172.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-13-59-05.563606.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-00-11.383528.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-00-11.596149.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-02-24.463692.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-02-24.678377.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-03-42.587692.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-03-42.800693.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-04-23.052191.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-04-23.254705.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-05-26.566258.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_25-maxones-int-vns-max-2023-09-20-14-05-26.790047.txt
+opt/single_objective/trivial/ones_count_problem/outputs/dimension_77-maxones-BitArray-vns-max-2023-09-20-17-59-11.386016.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-01-00-47-13.518081.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-01-00-57-04.651550.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-01-01-04-37.365495.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-00-52-19.935463.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-00-55-23.218038.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-00-55-54.448413.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-00-57-02.841335.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-00-59-11.687181.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-00-59-51.115472.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-01-03-20.373310.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-01-04-08.834549.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-01-06-32.037859.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-01-12-45.010730.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-01-15-03.227661.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-07-08-01-19-00.079338.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-01-15-09-17-40.888578.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-00-36-16.761184.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-00-36-59.541865.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-00-37-51.500942.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-00-38-34.009575.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-00-45-20.091634.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-00-46-54.390347.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-00-57-24.382762.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-01-01-05-34.000536.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-07-08-00-58-58.052857.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-46-37.708496.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-47-02.764405.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-48-27.240698.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-48-43.736784.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-49-10.532336.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-49-58.064208.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-52-18.681803.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-52-41.652133.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-54-53.584039.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-57-19.422110.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-BitArray-2024-10-30-10-00-21.580551.csv
+opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3]-maxones-variable_neighborhood_search-int-2024-10-30-09-46-04.120574.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/*.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/7-x2f-3t3-maxones-variable_neighborhood_search-int-max.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-29-22-00-42.226291.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-29-22-03-12.740118.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-29-22-04-27.526658.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-29-22-05-26.028740.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-29-22-05-57.149222.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-29-22-08-11.539518.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-46-37.708496.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-47-02.764405.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-48-27.240698.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-48-43.736784.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-49-10.532336.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-49-58.064208.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-52-18.681803.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-52-41.652133.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-54-53.584039.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-09-57-19.422110.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-10-30-10-00-21.580551.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-11-16-11-24-13.178826.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-11-16-11-24-58.514856.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-01-15-09-17-40.888578.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-36-16.761184.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-36-59.541865.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-37-51.500942.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-38-34.009575.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-45-20.091634.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-45-56.075462.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-46-54.390347.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-57-24.382762.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-01-05-34.000536.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-08-00-58-58.052857.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-10-29-21-36-53.018632.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-10-30-09-46-04.120574.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-11-16-11-23-37.472379.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-max.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/7-x^2f-3t3-maxones-variable_neighborhood_search-int-max-2023-10-30-12-54-22.827415.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/7-x^2f-3t3-maxones-variable_neighborhood_search-int-max-2023-11-01-21-15-46.439376.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-11-16-11-24-13.178826.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-BitArray-2024-11-16-11-24-58.514856.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-07-01-00-45-56.075462.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-10-29-21-36-53.018632.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-2024-11-16-11-23-37.472379.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/(7-x2)\[-3,3\]-maxones-variable_neighborhood_search-int-max.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/7-x^2f-3t3-maxones-variable_neighborhood_search-int-max-2023-10-30-12-54-22.827415.csv
+/opt/single_objective/glob/max_function_one_variable_problem/outputs/7-x^2f-3t3-maxones-variable_neighborhood_search-int-max-2023-11-01-21-15-46.439376.csv
+outputs
+/opt/single_objective/comb/max_ones_count_problem/outputs/*.csv
+/opt/single_objective/comb/max_ones_count_problem/outputs
+/.vs/--universal-optimizer.slnx/v18
+/.vs/--universal-optimizer/v18
+/.vs/--universal-optimizer.slnx/FileContentIndex
+/.vs
+.venv_docs/bin/activate
+.venv_docs/bin/activate.csh
+.venv_docs/bin/activate.fish
+.venv_docs/bin/Activate.ps1
+.venv_docs/bin/docutils
+.venv_docs/bin/normalizer
+.venv_docs/bin/pip
+.venv_docs/bin/pip3
+.venv_docs/bin/pip3.12
+.venv_docs/bin/pybabel
+.venv_docs/bin/pygmentize
+.venv_docs/bin/python
+.venv_docs/bin/python3
+.venv_docs/bin/python3.12
+.venv_docs/bin/rst2html
+.venv_docs/bin/rst2html4
+.venv_docs/bin/rst2html5
+.venv_docs/bin/rst2latex
+.venv_docs/bin/rst2man
+.venv_docs/bin/rst2odt
+.venv_docs/bin/rst2pseudoxml
+.venv_docs/bin/rst2s5
+.venv_docs/bin/rst2xetex
+.venv_docs/bin/rst2xml
+.venv_docs/bin/sphinx-apidoc
+.venv_docs/bin/sphinx-autogen
+.venv_docs/bin/sphinx-build
+.venv_docs/bin/sphinx-quickstart
+.venv_docs/lib64
+.venv_docs/pyvenv.cfg

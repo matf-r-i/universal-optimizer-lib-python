@@ -60,8 +60,8 @@ class TestMAMLMetaheuristicNumeric(unittest.TestCase):
 
         errors_history = np.array(errors_history)
         avg_errors = errors_history.mean(axis=1)
-        self.assertTrue(
-            avg_errors[-1] < avg_errors[0],
+        self.assertLess(
+            avg_errors[-1], avg_errors[0],
             msg="Average error has not decreased!"
         )
         print(f"Test with various functions has passed! Starting error: {avg_errors[0]:.4f}, Final error: {avg_errors[-1]:.4f}")
@@ -117,8 +117,8 @@ class TestMAMLMetaheuristicNumeric(unittest.TestCase):
         print(f"\nTest passed! Final θ={final_theta}, expected θ≈{expected_theta}")
 
         avg_errors = errors_history.mean(axis=1)
-        self.assertTrue(
-            avg_errors[-1] < avg_errors[0],
+        self.assertLess(
+            avg_errors[-1], avg_errors[0],
             msg="Average error has not decreased!"
         )
         print(f"Average error has decreased from {avg_errors[0]:.4f} to {avg_errors[-1]:.4f}")

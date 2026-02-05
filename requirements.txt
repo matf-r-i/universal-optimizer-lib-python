@@ -1,4 +1,4 @@
-﻿astroid==3.3.11
+astroid==3.3.11
 bitarray==3.8.0
 bitstring==4.3.1
 Bottleneck==1.6.0
@@ -40,7 +40,7 @@ pluggy==1.6.0
 polars==1.37.1
 polars-runtime-32==1.37.1
 proto-plus==1.27.0
-protobuf==6.33.4
+protobuf==6.33.5
 pyasn1==0.6.2
 pyasn1_modules==0.4.2
 Pygments==2.19.2

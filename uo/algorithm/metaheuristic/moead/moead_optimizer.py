@@ -144,6 +144,8 @@ class MoeadOptimizer(PopulationBasedMetaheuristic):
             lattice_parameter_H=self.lattice_parameter_H
         )
 
+        new_obj.execution_started = self.execution_started
+
         copied_population: list[Solution] = []
         for sol in self.current_population:
             copied_population.append(sol.copy())

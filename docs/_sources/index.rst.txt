@@ -19,11 +19,9 @@ Library  `Universal optimizer <https://github.com/math-rs-comp-int/universal-opt
 
 .. toctree::
    :maxdepth: 1
-   :caption: In-depth Information
+   :caption: Implemented algorithms
 
    implemented_algorithms
-
-   problems_to_be_solved
 
 .. toctree::
    :maxdepth: 4

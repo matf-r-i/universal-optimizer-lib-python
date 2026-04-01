@@ -9,6 +9,7 @@ Subpackages
 
    uo.tests.unit.algorithm.metaheuristic.genetic_algorithm
    uo.tests.unit.algorithm.metaheuristic.variable_neighborhood_search
+   uo.tests.unit.algorithm.metaheuristic.moead
 
 Submodules
 ----------

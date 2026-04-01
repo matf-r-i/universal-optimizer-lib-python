@@ -1,99 +1,131 @@
 How-to Guides
-=============
+#############
 
-- **Installation the library from provided source code**
+Installing the library
+**********************
 
-    1. Installing  and initializing `poetry` through `pipx`
+There are multiple ways of installing the library. The recommended way is to use `poetry` package manager, which will create virtual environment for the project and install all required dependencies.
 
-    .. code-block::
-        :caption: Installing pipx
+Alternative way is to install the library using `pip` package manager within already existing virtual environment.
 
-            > python -m pip install --user pipx 
-            > python -m pipx ensurepath
+Installation the library with `poetry` from provided source code
+================================================================
 
 
-    .. code-block::
-        :caption: Installing poetry
+1. Installing  and initializing `poetry` through `pipx`
 
-            > pipx install poetry
+.. code-block::
+    :caption: Installing pipx
 
-    2. Check if `poetry` is successfully installed
+        > python -m pip install --user pipx 
+        > python -m pipx ensurepath
 
-    .. code-block::
-        :caption: Check poetry version
 
-            > poetry --version
+.. code-block::
+    :caption: Installing poetry
 
-    3. Install project's packets and documentation builder packets with `poetry` 
+        > pipx install poetry
 
-    .. code-block::
-        :caption: Specify that `poetry` will work with python version 3.11 
+2. Check if `poetry` is successfully installed
 
-            > poetry env use 3.11
+.. code-block::
+    :caption: Check poetry version
+
+        > poetry --version
+
+3. Install project's packets and documentation builder packets with `poetry` 
+
+.. code-block::
+    :caption: Specify that `poetry` will work with python version 3.13 
+
+        > poetry env use 3.13
 
     The previous command will create virtual environment based on `python3.11` in subdirectory `/.venv` 
 
-    .. code-block::
-        :caption: Install dependencies (and documentation dependencies) with `poetry`
+.. code-block::
+    :caption: Install dependencies (and documentation dependencies) with `poetry`
 
-            > poetry install --with docs
-
-- **Running of all the unit tests within developed applications**
-
-    - Execute command for running tests from directory `/` 
-
-    .. code-block::
-        :caption: Run all unit tests within project
-
-            > python -m unittest
+        > poetry install --with docs
 
 
-    - Execute command for obtaining coverage analysis from directory `/` 
+Installation the library with `pip` from provided source code
+=============================================================
 
-    .. code-block::
-        :caption: Obtain coverage analysis of tests within project
+1. Create and activate virtual environment
 
-            > python -m coverage run -m unittest
-            > python -m coverage report
+.. code-block::
+    :caption: Create and activate virtual environment
+
+        > python -m venv venv
+        > source venv/bin/activate      # On Linux
+        > .\venv\Scripts\activate       # On Windows
+
+2. Install required dependencies from `requirements.txt` file
+
+.. code-block::
+    :caption: Install dependencies with pip
+
+        > pip install -r requirements.txt
+        > pip install -r requirements-docs.txt
+
+Running of all the unit tests within developed library
+******************************************************
+
+Unit tests are located within `tests` subdirectory of each application. To run all the unit tests, the following commands can be used.
+
+.. code-block::
+    :caption: Run all unit tests within project
+
+        > python -m unittest
+
+Obtaining coverage analysis of all unit tests within library can be done with `coverage` package. The following commands can be used depending on the way how the library was installed.
 
 
-- **Building documentation for the library**
+.. code-block::
+    :caption: Obtain coverage analysis of tests within project
 
-    1. Build documentation sources into `/documentation/source` folder from `python` source files 
-
-    .. code-block::
-        :caption: Build documentation sources
-
-            > sphinx-apidoc -o documentation/source/ uo
-            > sphinx-apidoc -o documentation/source/ opt
+        > python -m coverage run -m unittest
+        > python -m coverage report
 
 
-    2. Change current directory to `/documentation` 
+Building documentation for the library
+**************************************
 
-    .. code-block::
-        :caption: Change directory
+1. Build documentation sources into `/documentation/source` folder from `python` source files 
 
-            > cd documentation
+.. code-block::
+    :caption: Build documentation sources
 
-    3. Clean previously builded HTML documentation 
+        > sphinx-apidoc -o documentation/source/ uo
+        > sphinx-apidoc -o documentation/source/ opt
 
-    .. code-block::
-        :caption: Clean HTML documentation 
 
-            /documentation> ./make clean html
+2. Change current directory to `/documentation` 
 
-    4. Build HTML documentation from `/documentation/source` directory. Created documentation is within `/documentation/build/html` directory. 
+.. code-block::
+    :caption: Change directory
 
-    .. code-block::
-        :caption: Build HTML documentation 
+        > cd documentation
 
-            /documentation> ./make html
+3. Clean previously builded HTML documentation 
 
-    5. Generated documentation, that is in folder `/documentation/build/html` should be then copied into folder `/docs`.
+.. code-block::
+    :caption: Clean HTML documentation 
 
-    .. code-block::
-        :caption: Copy generated HTML documentation 
+        /documentation> ./make clean html
 
-            /documentation> cp build/html/*.* ../docs
+4. Build HTML documentation from `/documentation/source` directory. Created documentation is within `/documentation/build/html` directory. 
+
+.. code-block::
+    :caption: Build HTML documentation 
+
+        /documentation> ./make html
+
+5. Generated documentation, that is in folder `/documentation/build/html` should be then copied into folder `/docs`.
+
+.. code-block::
+    :caption: Copy generated HTML documentation 
+
+        /documentation> cp build/html/*.* ../docs
 
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Genetic Algorithm &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+  <title>MOEA/D &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Simulated Annealing" href="implemented_algorithms_simulated_annealing.html" />
-    <link rel="prev" title="Variable Neighborhood Search" href="implemented_algorithms_variable_neighborhood_search.html" /> 
+    <link rel="next" title="Universal optimization library" href="modules.html" />
+    <link rel="prev" title="MAML Metaheuristic" href="maml_metaheuristic.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -56,15 +56,15 @@
 <li class="toctree-l2"><a class="reference internal" href="implemented_algorithms_exact.html">Implemented exact algorithms</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_variable_neighborhood_search.html">Variable Neighborhood Search</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Genetic Algorithm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_genetic_algorithm.html">Genetic Algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_simulated_annealing.html">Simulated Annealing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maml_metaheuristic.html">MAML Metaheuristic</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MOEA/D</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#basic-information">Basic information</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#implementation-notes">Implementation notes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_simulated_annealing.html">Simulated Annealing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="maml_metaheuristic.html">MAML Metaheuristic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_moead.html">MOEA/D</a></li>
 </ul>
 </li>
 </ul>
@@ -97,9 +97,9 @@
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="implemented_algorithms.html">Implemented algorithms</a></li>
           <li class="breadcrumb-item"><a href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a></li>
-      <li class="breadcrumb-item active">Genetic Algorithm</li>
+      <li class="breadcrumb-item active">MOEA/D</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/implemented_algorithms_genetic_algorithm.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/implemented_algorithms_moead.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -107,33 +107,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="genetic-algorithm">
-<span id="algorithm-genetic-algorithm"></span><h1>Genetic Algorithm<a class="headerlink" href="#genetic-algorithm" title="Link to this heading"></a></h1>
+  <section id="moea-d">
+<span id="algorithm-moead"></span><h1>MOEA/D<a class="headerlink" href="#moea-d" title="Link to this heading"></a></h1>
 <section id="basic-information">
 <h2>Basic information<a class="headerlink" href="#basic-information" title="Link to this heading"></a></h2>
+<p>Multi-Objective Evolutionary Algorithm based on Decomposition (MOEA/D)
+is a population-based metaheuristic for solving multi-objective
+optimization problems. The method decomposes a multi-objective problem
+into a set of scalar subproblems defined by weight vectors and optimizes
+them collaboratively by means of neighborhood-based offspring generation
+and replacement.</p>
+<p>The implementation added to this library supports both real-valued and
+binary solution representations. The algorithm uses Tchebyscheff
+scalarization, neighborhood structures induced by distances between
+weight vectors, and support classes for offspring generation.</p>
 </section>
 <section id="implementation-notes">
 <h2>Implementation notes<a class="headerlink" href="#implementation-notes" title="Link to this heading"></a></h2>
-<p>Implementation of that optimization method is given within the class <span class="xref std std-ref">GaOptimizer</span>.</p>
+<p>Implementation of that optimization method is given within the class
+<a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#py-moead-optimizer"><span class="std std-ref">MoeadOptimizer</span></a>.</p>
+<p>Supporting functionality is implemented in the following modules and
+classes:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#py-moead-variation-support"><span class="std std-ref">MoeadVariationSupport</span></a></p></li>
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#py-moead-variation-support-real"><span class="std std-ref">MoeadVariationSupportReal</span></a></p></li>
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#py-moead-variation-support-binary"><span class="std std-ref">MoeadVariationSupportBinary</span></a></p></li>
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#py-moead-decomposition"><span class="std std-ref">MOEA/D decomposition utilities</span></a></p></li>
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#py-moead-weights"><span class="std std-ref">MOEA/D weight utilities</span></a></p></li>
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#py-moead-metrics"><span class="std std-ref">MOEA/D metrics</span></a></p></li>
+</ul>
 </section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
 <div role="list" class="citation-list">
-<div class="citation" id="mlahan1997" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>MlaHan1997<span class="fn-bracket">]</span></span>
-<p>Mladenović, N.; Hansen P. (1997). “Variable neighborhood search”. Computers and Operations Research. 24 (11): 1097–1100. CiteSeerX 10.1.1.800.1797. doi:10.1016/s0305-0548(97)00031-2.</p>
+<div class="citation" id="zli2007" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>ZLi2007<span class="fn-bracket">]</span></span>
+<p>Zhang, Q.; Li, H. (2007). “MOEA/D: A Multiobjective Evolutionary Algorithm Based on Decomposition”. IEEE Transactions on Evolutionary Computation. 11 (6): 712–731.</p>
 </div>
-<div class="citation" id="genpot2010" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>GenPot2010<span class="fn-bracket">]</span></span>
-<p>Gendreau, M.; Potvin, J-Y. (2010). “Handbook of Metaheuristics”. Springer.</p>
+<div class="citation" id="debagr1995" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>DebAgr1995<span class="fn-bracket">]</span></span>
+<p>Deb, K.; Agrawal, R. B. (1995). “Simulated Binary Crossover for Continuous Search Space”. Complex Systems. 9 (2): 115–148.</p>
 </div>
-<div class="citation" id="glokoc2003" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>GloKoc2003<span class="fn-bracket">]</span></span>
-<p>Glover, F.; Kochenberger, G.A. (2003). “Handbook of Metaheuristics”. Kluwer Academic Publishers.</p>
-</div>
-<div class="citation" id="burken2005" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>BurKen2005<span class="fn-bracket">]</span></span>
-<p>Burke, EK.; Kendall, G. (2005). Burke, Edmund K; Kendall, Graham (eds.). Search methodologies. Introductory tutorials in optimization and decision support techniques. Springer. doi:10.1007/978-1-4614-6940-7. ISBN 978-1-4614-6939-1.</p>
+<div class="citation" id="deb2001" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Deb2001<span class="fn-bracket">]</span></span>
+<p>Deb, K. (2001). “Multi-Objective Optimization Using Evolutionary Algorithms”. Wiley.</p>
 </div>
 </div>
 </section>
@@ -143,8 +160,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="implemented_algorithms_variable_neighborhood_search.html" class="btn btn-neutral float-left" title="Variable Neighborhood Search" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="implemented_algorithms_simulated_annealing.html" class="btn btn-neutral float-right" title="Simulated Annealing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="maml_metaheuristic.html" class="btn btn-neutral float-left" title="MAML Metaheuristic" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="Universal optimization library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uo.algorithm.metaheuristic.moead package &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="uo.problem package" href="uo.problem.html" />
+    <link rel="prev" title="uo.algorithm.metaheuristic.simulated_annealing package" href="uo.algorithm.metaheuristic.simulated_annealing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Optimization Algorithms Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Program code</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Universal optimization library</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="uo.html">uo package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="uo.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="uo.algorithm.html">uo.algorithm package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.problem.html">uo.problem package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.solution.html">uo.solution package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.utils.html">uo.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="uo.html#module-uo">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html#contributors">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Optimization Algorithms Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Universal optimization library</a></li>
+          <li class="breadcrumb-item"><a href="uo.html">uo package</a></li>
+          <li class="breadcrumb-item"><a href="uo.algorithm.html">uo.algorithm package</a></li>
+          <li class="breadcrumb-item"><a href="uo.algorithm.metaheuristic.html">uo.algorithm.metaheuristic package</a></li>
+      <li class="breadcrumb-item active">uo.algorithm.metaheuristic.moead package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/uo.algorithm.metaheuristic.moead.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uo-algorithm-metaheuristic-moead-package">
+<h1>uo.algorithm.metaheuristic.moead package<a class="headerlink" href="#uo-algorithm-metaheuristic-moead-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead.moead_optimizer">
+<span id="uo-algorithm-metaheuristic-moead-moead-optimizer-module"></span><h2>uo.algorithm.metaheuristic.moead.moead_optimizer module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead.moead_optimizer" title="Link to this heading"></a></h2>
+<p id="py-moead-optimizer">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead.moead_optimizer" title="uo.algorithm.metaheuristic.moead.moead_optimizer"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead_optimizer</span></code></a>
+module contains class
+<a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer" title="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadOptimizer</span></code></a>,
+that represents implementation of the
+<a class="reference internal" href="implemented_algorithms_moead.html#algorithm-moead"><span class="std std-ref">MOEA/D</span></a> algorithm.</p>
+<p>The algorithm decomposes a multi-objective optimization problem into a
+set of scalar subproblems defined by weight vectors and solves them
+cooperatively by means of neighborhood-based offspring generation and
+replacement.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_optimizer.</span></span><span class="sig-name descname"><span class="pre">MoeadOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">moead_variation_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><span class="pre">MoeadVariationSupport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighborhood_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_number_of_replaced_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FinishControl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_statistics_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice_parameter_H</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><code class="xref py py-class docutils literal notranslate"><span class="pre">PopulationBasedMetaheuristic</span></code></a></p>
+<p>Implementation of the Multi-Objective Evolutionary Algorithm based on
+Decomposition (MOEA/D).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer" title="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer"><span class="pre">MoeadOptimizer</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>copied MOEA/D optimizer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer" title="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer">MoeadOptimizer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.current_population">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_population</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.current_population" title="Link to this definition"></a></dt>
+<dd><p>Property getter for current population.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.ideal_point">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ideal_point</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.ideal_point" title="Link to this definition"></a></dt>
+<dd><p>Property getter for ideal point.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.init" title="Link to this definition"></a></dt>
+<dd><p>Initialization of the MOEA/D algorithm.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.lattice_parameter_H">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lattice_parameter_H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.lattice_parameter_H" title="Link to this definition"></a></dt>
+<dd><p>Property getter for simplex-lattice parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.main_loop_iteration">
+<span class="sig-name descname"><span class="pre">main_loop_iteration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.main_loop_iteration" title="Link to this definition"></a></dt>
+<dd><p>One iteration within main loop of the MOEA/D algorithm.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.max_number_of_replaced_neighbors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">max_number_of_replaced_neighbors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.max_number_of_replaced_neighbors" title="Link to this definition"></a></dt>
+<dd><p>Property getter for maximum number of replaced neighbors.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.moead_variation_support">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moead_variation_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><span class="pre">MoeadVariationSupport</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.moead_variation_support" title="Link to this definition"></a></dt>
+<dd><p>Property getter for variation support.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.neighborhood_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighborhood_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.neighborhood_size" title="Link to this definition"></a></dt>
+<dd><p>Property getter for neighborhood size.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.nondominated_archive">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nondominated_archive</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.nondominated_archive" title="Link to this definition"></a></dt>
+<dd><p>Property getter for nondominated archive.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.population_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">population_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.population_size" title="Link to this definition"></a></dt>
+<dd><p>Property getter for population size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the MOEA/D optimizer.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.weight_setup">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weight_setup</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup" title="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup"><span class="pre">WeightSetup</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer.weight_setup" title="Link to this definition"></a></dt>
+<dd><p>Property getter for weight setup.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead.moead_variation_support">
+<span id="uo-algorithm-metaheuristic-moead-moead-variation-support-module"></span><h2>uo.algorithm.metaheuristic.moead.moead_variation_support module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead.moead_variation_support" title="Link to this heading"></a></h2>
+<p id="py-moead-variation-support">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead.moead_variation_support" title="uo.algorithm.metaheuristic.moead.moead_variation_support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead_variation_support</span></code></a>
+module describes the class
+<a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupport</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_variation_support.</span></span><span class="sig-name descname"><span class="pre">MoeadVariationSupport</span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">R_co</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport.copy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupport</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport.generate_offspring">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_offspring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">R_co</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">R_co</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">R_co</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><span class="pre">PopulationBasedMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport.generate_offspring" title="Link to this definition"></a></dt>
+<dd><p>Generate one offspring from two parents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem</strong> (<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><em>Problem</em></a>) – problem that is solved</p></li>
+<li><p><strong>parent1</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a><em>[</em><em>R_co</em><em>,</em><em>A_co</em><em>]</em>) – first parent</p></li>
+<li><p><strong>parent2</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a><em>[</em><em>R_co</em><em>,</em><em>A_co</em><em>]</em>) – second parent</p></li>
+<li><p><strong>child</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a><em>[</em><em>R_co</em><em>,</em><em>A_co</em><em>]</em>) – child solution that is created</p></li>
+<li><p><strong>optimizer</strong> (<a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><em>PopulationBasedMetaheuristic</em></a>) – optimizer that is executed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead.moead_variation_support_real">
+<span id="uo-algorithm-metaheuristic-moead-moead-variation-support-real-module"></span><h2>uo.algorithm.metaheuristic.moead.moead_variation_support_real module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead.moead_variation_support_real" title="Link to this heading"></a></h2>
+<p id="py-moead-variation-support-real">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead.moead_variation_support_real" title="uo.algorithm.metaheuristic.moead.moead_variation_support_real"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead_variation_support_real</span></code></a>
+module contains class
+<a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal" title="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupportReal</span></code></a>,
+that represents variation support for the MOEA/D algorithm where solution
+representation is real-valued.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_variation_support_real.</span></span><span class="sig-name descname"><span class="pre">MoeadVariationSupportReal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crossover_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutation_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupport</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>copied instance</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal" title="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal">MoeadVariationSupportReal</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.crossover_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">crossover_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.crossover_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for crossover probability.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.eta_c">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eta_c</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.eta_c" title="Link to this definition"></a></dt>
+<dd><p>Property getter for SBX distribution index.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.eta_m">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eta_m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.eta_m" title="Link to this definition"></a></dt>
+<dd><p>Property getter for polynomial mutation distribution index.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.generate_offspring">
+<span class="sig-name descname"><span class="pre">generate_offspring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><span class="pre">PopulationBasedMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.generate_offspring" title="Link to this definition"></a></dt>
+<dd><p>Generate one real-valued offspring using SBX and polynomial mutation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.mutation_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mutation_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.mutation_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for mutation probability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_real.MoeadVariationSupportReal.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the support instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead.moead_variation_support_binary">
+<span id="uo-algorithm-metaheuristic-moead-moead-variation-support-binary-module"></span><h2>uo.algorithm.metaheuristic.moead.moead_variation_support_binary module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead.moead_variation_support_binary" title="Link to this heading"></a></h2>
+<p id="py-moead-variation-support-binary">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead.moead_variation_support_binary" title="uo.algorithm.metaheuristic.moead.moead_variation_support_binary"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead_variation_support_binary</span></code></a>
+module contains class
+<a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary" title="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupportBinary</span></code></a>,
+that represents variation support for the MOEA/D algorithm where solution
+representation is binary.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_variation_support_binary.</span></span><span class="sig-name descname"><span class="pre">MoeadVariationSupportBinary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crossover_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutation_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupport</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>copied instance</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary" title="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary">MoeadVariationSupportBinary</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.crossover_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">crossover_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.crossover_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for crossover probability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.generate_offspring">
+<span class="sig-name descname"><span class="pre">generate_offspring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><span class="pre">PopulationBasedMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.generate_offspring" title="Link to this definition"></a></dt>
+<dd><p>Generate one binary offspring using one-point crossover and bit-flip mutation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.mutation_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mutation_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.mutation_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for mutation probability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_variation_support_binary.MoeadVariationSupportBinary.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the support instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead.moead_decomposition">
+<span id="uo-algorithm-metaheuristic-moead-moead-decomposition-module"></span><h2>uo.algorithm.metaheuristic.moead.moead_decomposition module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead.moead_decomposition" title="Link to this heading"></a></h2>
+<p id="py-moead-decomposition">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead.moead_decomposition" title="uo.algorithm.metaheuristic.moead.moead_decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead_decomposition</span></code></a>
+module contains scalarization functions used by the
+<a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer" title="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadOptimizer</span></code></a>
+algorithm.</p>
+<p>Currently, the module provides Tchebyscheff scalarization.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_decomposition.tchebyscheff">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_decomposition.</span></span><span class="sig-name descname"><span class="pre">tchebyscheff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-12</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_decomposition.tchebyscheff" title="Link to this definition"></a></dt>
+<dd><p>Compute Tchebyscheff scalarization values for objective vectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>np.ndarray</em>) – objective matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p></li>
+<li><p><strong>w</strong> (<em>np.ndarray</em>) – weight vector of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>z</strong> (<em>np.ndarray</em>) – ideal point of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – small positive value used to avoid zero weights</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>scalarization values of shape <code class="docutils literal notranslate"><span class="pre">(N,)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_decomposition.tchebyscheff_one">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_decomposition.</span></span><span class="sig-name descname"><span class="pre">tchebyscheff_one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-12</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_decomposition.tchebyscheff_one" title="Link to this definition"></a></dt>
+<dd><p>Compute Tchebyscheff scalarization value for one objective vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>np.ndarray</em>) – objective vector of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>w</strong> (<em>np.ndarray</em>) – weight vector of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>z</strong> (<em>np.ndarray</em>) – ideal point of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – small positive value used to avoid zero weights</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>scalarization value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead.moead_weights">
+<span id="uo-algorithm-metaheuristic-moead-moead-weights-module"></span><h2>uo.algorithm.metaheuristic.moead.moead_weights module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead.moead_weights" title="Link to this heading"></a></h2>
+<p id="py-moead-weights">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead.moead_weights" title="uo.algorithm.metaheuristic.moead.moead_weights"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead_weights</span></code></a>
+module contains functions for generating MOEA/D weight vectors and
+their neighborhoods.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_weights.</span></span><span class="sig-name descname"><span class="pre">WeightSetup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Container that stores MOEA/D weight vectors and neighborhoods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>np.ndarray</em>) – weight-vector matrix</p></li>
+<li><p><strong>B</strong> (<em>np.ndarray</em>) – neighborhood matrix</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup.B">
+<span class="sig-name descname"><span class="pre">B</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup.B" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup.W">
+<span class="sig-name descname"><span class="pre">W</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup.W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_weights.build_weight_setup">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_weights.</span></span><span class="sig-name descname"><span class="pre">build_weight_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup" title="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup"><span class="pre">WeightSetup</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_weights.build_weight_setup" title="Link to this definition"></a></dt>
+<dd><p>Build weight vectors and neighborhoods for MOEA/D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of objectives</p></li>
+<li><p><strong>population_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of weight vectors for <code class="docutils literal notranslate"><span class="pre">n_obj</span> <span class="pre">==</span> <span class="pre">2</span></code></p></li>
+<li><p><strong>H</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – lattice parameter for <code class="docutils literal notranslate"><span class="pre">n_obj</span> <span class="pre">&gt;=</span> <span class="pre">3</span></code></p></li>
+<li><p><strong>T</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – neighborhood size</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>weight setup object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup" title="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup">WeightSetup</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_weights.neighborhood_by_euclidean">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_weights.</span></span><span class="sig-name descname"><span class="pre">neighborhood_by_euclidean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_weights.neighborhood_by_euclidean" title="Link to this definition"></a></dt>
+<dd><p>Build neighborhood matrix from weight vectors using Euclidean distance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>np.ndarray</em>) – weight matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p></li>
+<li><p><strong>T</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – neighborhood size</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>neighborhood index matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">T)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_weights.simplex_lattice_weights">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_weights.</span></span><span class="sig-name descname"><span class="pre">simplex_lattice_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_weights.simplex_lattice_weights" title="Link to this definition"></a></dt>
+<dd><p>Generate simplex-lattice design weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of objectives</p></li>
+<li><p><strong>H</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – lattice parameter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_weights.weights_2d_uniform">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_weights.</span></span><span class="sig-name descname"><span class="pre">weights_2d_uniform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_weights.weights_2d_uniform" title="Link to this definition"></a></dt>
+<dd><p>Generate uniformly distributed 2D weight vectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>N</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of weight vectors</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">2)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead.moead_metrics">
+<span id="uo-algorithm-metaheuristic-moead-moead-metrics-module"></span><h2>uo.algorithm.metaheuristic.moead.moead_metrics module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead.moead_metrics" title="Link to this heading"></a></h2>
+<p id="py-moead-metrics">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead.moead_metrics" title="uo.algorithm.metaheuristic.moead.moead_metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead_metrics</span></code></a>
+module contains quality indicators for multi-objective optimization
+results, including IGD and 2D hypervolume.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_metrics.filter_nondominated_points">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_metrics.</span></span><span class="sig-name descname"><span class="pre">filter_nondominated_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_metrics.filter_nondominated_points" title="Link to this definition"></a></dt>
+<dd><p>Return nondominated subset of points for minimization problems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>A</strong> (<em>np.ndarray</em>) – objective matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nondominated subset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_metrics.hypervolume_2d">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_metrics.</span></span><span class="sig-name descname"><span class="pre">hypervolume_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_metrics.hypervolume_2d" title="Link to this definition"></a></dt>
+<dd><p>Compute 2D hypervolume for minimization problems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>np.ndarray</em>) – objective matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">2)</span></code></p></li>
+<li><p><strong>ref_point</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>]</em>) – reference point</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hypervolume value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.moead_metrics.igd">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.moead_metrics.</span></span><span class="sig-name descname"><span class="pre">igd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.moead_metrics.igd" title="Link to this definition"></a></dt>
+<dd><p>Compute Inverted Generational Distance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>np.ndarray</em>) – approximation set in objective space of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p></li>
+<li><p><strong>Z</strong> (<em>np.ndarray</em>) – reference set in objective space of shape <code class="docutils literal notranslate"><span class="pre">(K,</span> <span class="pre">M)</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>IGD value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.moead">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-uo.algorithm.metaheuristic.moead" title="Link to this heading"></a></h2>
+<p id="py-moead">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.moead" title="uo.algorithm.metaheuristic.moead"><code class="xref py py-mod docutils literal notranslate"><span class="pre">moead</span></code></a>
+package contains implementation of the Multi-Objective Evolutionary
+Algorithm based on Decomposition (MOEA/D), together with supporting
+functionality for decomposition, weight-vector generation, variation
+support, and quality indicators.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">MoeadOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">moead_variation_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><span class="pre">MoeadVariationSupport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighborhood_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_number_of_replaced_neighbors</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FinishControl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_statistics_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lattice_parameter_H</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><code class="xref py py-class docutils literal notranslate"><span class="pre">PopulationBasedMetaheuristic</span></code></a></p>
+<p>Implementation of the Multi-Objective Evolutionary Algorithm based on
+Decomposition (MOEA/D).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer" title="uo.algorithm.metaheuristic.moead.moead_optimizer.MoeadOptimizer"><span class="pre">MoeadOptimizer</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>copied MOEA/D optimizer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer" title="uo.algorithm.metaheuristic.moead.MoeadOptimizer">MoeadOptimizer</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.current_population">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_population</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.current_population" title="Link to this definition"></a></dt>
+<dd><p>Property getter for current population.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.ideal_point">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ideal_point</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.ideal_point" title="Link to this definition"></a></dt>
+<dd><p>Property getter for ideal point.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.init" title="Link to this definition"></a></dt>
+<dd><p>Initialization of the MOEA/D algorithm.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.lattice_parameter_H">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">lattice_parameter_H</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.lattice_parameter_H" title="Link to this definition"></a></dt>
+<dd><p>Property getter for simplex-lattice parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.main_loop_iteration">
+<span class="sig-name descname"><span class="pre">main_loop_iteration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.main_loop_iteration" title="Link to this definition"></a></dt>
+<dd><p>One iteration within main loop of the MOEA/D algorithm.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.max_number_of_replaced_neighbors">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">max_number_of_replaced_neighbors</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.max_number_of_replaced_neighbors" title="Link to this definition"></a></dt>
+<dd><p>Property getter for maximum number of replaced neighbors.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.moead_variation_support">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moead_variation_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><span class="pre">MoeadVariationSupport</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.moead_variation_support" title="Link to this definition"></a></dt>
+<dd><p>Property getter for variation support.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.neighborhood_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighborhood_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.neighborhood_size" title="Link to this definition"></a></dt>
+<dd><p>Property getter for neighborhood size.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.nondominated_archive">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">nondominated_archive</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.nondominated_archive" title="Link to this definition"></a></dt>
+<dd><p>Property getter for nondominated archive.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.population_size">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">population_size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.population_size" title="Link to this definition"></a></dt>
+<dd><p>Property getter for population size.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the MOEA/D optimizer.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadOptimizer.weight_setup">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">weight_setup</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup" title="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup"><span class="pre">WeightSetup</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadOptimizer.weight_setup" title="Link to this definition"></a></dt>
+<dd><p>Property getter for weight setup.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">MoeadVariationSupport</span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupport" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">R_co</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupport.copy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupport.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.MoeadVariationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupport</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupport.generate_offspring">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">generate_offspring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">R_co</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">R_co</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">R_co</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><span class="pre">PopulationBasedMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupport.generate_offspring" title="Link to this definition"></a></dt>
+<dd><p>Generate one offspring from two parents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem</strong> (<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><em>Problem</em></a>) – problem that is solved</p></li>
+<li><p><strong>parent1</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a><em>[</em><em>R_co</em><em>,</em><em>A_co</em><em>]</em>) – first parent</p></li>
+<li><p><strong>parent2</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a><em>[</em><em>R_co</em><em>,</em><em>A_co</em><em>]</em>) – second parent</p></li>
+<li><p><strong>child</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a><em>[</em><em>R_co</em><em>,</em><em>A_co</em><em>]</em>) – child solution that is created</p></li>
+<li><p><strong>optimizer</strong> (<a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><em>PopulationBasedMetaheuristic</em></a>) – optimizer that is executed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">MoeadVariationSupportBinary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crossover_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutation_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupport</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>copied instance</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary" title="uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary">MoeadVariationSupportBinary</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.crossover_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">crossover_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.crossover_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for crossover probability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.generate_offspring">
+<span class="sig-name descname"><span class="pre">generate_offspring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><span class="pre">PopulationBasedMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.generate_offspring" title="Link to this definition"></a></dt>
+<dd><p>Generate one binary offspring using one-point crossover and bit-flip mutation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.mutation_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mutation_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.mutation_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for mutation probability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportBinary.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the support instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">MoeadVariationSupportReal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crossover_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mutation_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_c</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport" title="uo.algorithm.metaheuristic.moead.moead_variation_support.MoeadVariationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">MoeadVariationSupport</span></code></a>[<code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>copied instance</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal" title="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal">MoeadVariationSupportReal</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.crossover_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">crossover_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.crossover_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for crossover probability.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.eta_c">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eta_c</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.eta_c" title="Link to this definition"></a></dt>
+<dd><p>Property getter for SBX distribution index.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.eta_m">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eta_m</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.eta_m" title="Link to this definition"></a></dt>
+<dd><p>Property getter for polynomial mutation distribution index.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.generate_offspring">
+<span class="sig-name descname"><span class="pre">generate_offspring</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">child</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><span class="pre">PopulationBasedMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.generate_offspring" title="Link to this definition"></a></dt>
+<dd><p>Generate one real-valued offspring using SBX and polynomial mutation.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.mutation_probability">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mutation_probability</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.mutation_probability" title="Link to this definition"></a></dt>
+<dd><p>Property getter for mutation probability.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.MoeadVariationSupportReal.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the support instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.WeightSetup">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">WeightSetup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.WeightSetup" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Container that stores MOEA/D weight vectors and neighborhoods.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>np.ndarray</em>) – weight-vector matrix</p></li>
+<li><p><strong>B</strong> (<em>np.ndarray</em>) – neighborhood matrix</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.WeightSetup.B">
+<span class="sig-name descname"><span class="pre">B</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.WeightSetup.B" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.WeightSetup.W">
+<span class="sig-name descname"><span class="pre">W</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ndarray</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.WeightSetup.W" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.build_weight_setup">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">build_weight_setup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_obj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">population_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">20</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup" title="uo.algorithm.metaheuristic.moead.moead_weights.WeightSetup"><span class="pre">WeightSetup</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.build_weight_setup" title="Link to this definition"></a></dt>
+<dd><p>Build weight vectors and neighborhoods for MOEA/D.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_obj</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of objectives</p></li>
+<li><p><strong>population_size</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of weight vectors for <code class="docutils literal notranslate"><span class="pre">n_obj</span> <span class="pre">==</span> <span class="pre">2</span></code></p></li>
+<li><p><strong>H</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – lattice parameter for <code class="docutils literal notranslate"><span class="pre">n_obj</span> <span class="pre">&gt;=</span> <span class="pre">3</span></code></p></li>
+<li><p><strong>T</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – neighborhood size</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>weight setup object</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.moead.WeightSetup" title="uo.algorithm.metaheuristic.moead.WeightSetup">WeightSetup</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.filter_nondominated_points">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">filter_nondominated_points</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.filter_nondominated_points" title="Link to this definition"></a></dt>
+<dd><p>Return nondominated subset of points for minimization problems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>A</strong> (<em>np.ndarray</em>) – objective matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>nondominated subset</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.hypervolume_2d">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">hypervolume_2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_point</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><span class="pre">tuple</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.hypervolume_2d" title="Link to this definition"></a></dt>
+<dd><p>Compute 2D hypervolume for minimization problems.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>np.ndarray</em>) – objective matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">2)</span></code></p></li>
+<li><p><strong>ref_point</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#tuple" title="(in Python v3.14)"><em>tuple</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a><em>]</em>) – reference point</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>hypervolume value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.igd">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">igd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.igd" title="Link to this definition"></a></dt>
+<dd><p>Compute Inverted Generational Distance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A</strong> (<em>np.ndarray</em>) – approximation set in objective space of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p></li>
+<li><p><strong>Z</strong> (<em>np.ndarray</em>) – reference set in objective space of shape <code class="docutils literal notranslate"><span class="pre">(K,</span> <span class="pre">M)</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>IGD value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.neighborhood_by_euclidean">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">neighborhood_by_euclidean</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.neighborhood_by_euclidean" title="Link to this definition"></a></dt>
+<dd><p>Build neighborhood matrix from weight vectors using Euclidean distance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>np.ndarray</em>) – weight matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p></li>
+<li><p><strong>T</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – neighborhood size</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>neighborhood index matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">T)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.simplex_lattice_weights">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">simplex_lattice_weights</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">H</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.simplex_lattice_weights" title="Link to this definition"></a></dt>
+<dd><p>Generate simplex-lattice design weights.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>M</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of objectives</p></li>
+<li><p><strong>H</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – lattice parameter</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.tchebyscheff">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">tchebyscheff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">F</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-12</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.tchebyscheff" title="Link to this definition"></a></dt>
+<dd><p>Compute Tchebyscheff scalarization values for objective vectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>F</strong> (<em>np.ndarray</em>) – objective matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">M)</span></code></p></li>
+<li><p><strong>w</strong> (<em>np.ndarray</em>) – weight vector of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>z</strong> (<em>np.ndarray</em>) – ideal point of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – small positive value used to avoid zero weights</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>scalarization values of shape <code class="docutils literal notranslate"><span class="pre">(N,)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.tchebyscheff_one">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">tchebyscheff_one</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-12</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.tchebyscheff_one" title="Link to this definition"></a></dt>
+<dd><p>Compute Tchebyscheff scalarization value for one objective vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>np.ndarray</em>) – objective vector of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>w</strong> (<em>np.ndarray</em>) – weight vector of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>z</strong> (<em>np.ndarray</em>) – ideal point of shape <code class="docutils literal notranslate"><span class="pre">(M,)</span></code></p></li>
+<li><p><strong>eps</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>) – small positive value used to avoid zero weights</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>scalarization value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.moead.weights_2d_uniform">
+<span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.moead.</span></span><span class="sig-name descname"><span class="pre">weights_2d_uniform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.moead.weights_2d_uniform" title="Link to this definition"></a></dt>
+<dd><p>Generate uniformly distributed 2D weight vectors.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>N</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>) – number of weight vectors</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>matrix of shape <code class="docutils literal notranslate"><span class="pre">(N,</span> <span class="pre">2)</span></code></p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.ndarray</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="uo.algorithm.metaheuristic.simulated_annealing.html" class="btn btn-neutral float-left" title="uo.algorithm.metaheuristic.simulated_annealing package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="uo.problem.html" class="btn btn-neutral float-right" title="uo.problem package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Vladimir Filipovic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

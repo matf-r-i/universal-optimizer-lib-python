@@ -48,17 +48,24 @@
               <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">How-to Guides</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How-to Guides</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-the-library">Installing the library</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-the-library-with-poetry-from-provided-source-code">Installation the library with <cite>poetry</cite> from provided source code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-the-library-with-pip-from-provided-source-code">Installation the library with <cite>pip</cite> from provided source code</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">In-depth Information</span></p>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-of-all-the-unit-tests-within-developed-library">Running of all the unit tests within developed library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-documentation-for-the-library">Building documentation for the library</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="problems_to_be_solved.html">Problems to be solved</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Program code</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">Library</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html#optimization">Optimization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Universal optimization library</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
 <ul>
@@ -93,10 +100,13 @@
              
   <section id="how-to-guides">
 <h1>How-to Guides<a class="headerlink" href="#how-to-guides" title="Link to this heading"></a></h1>
-<ul>
-<li><p><strong>Installation the library from provided source code</strong></p>
-<blockquote>
-<div><ol class="arabic simple">
+<section id="installing-the-library">
+<h2>Installing the library<a class="headerlink" href="#installing-the-library" title="Link to this heading"></a></h2>
+<p>There are multiple ways of installing the library. The recommended way is to use <cite>poetry</cite> package manager, which will create virtual environment for the project and install all required dependencies.</p>
+<p>Alternative way is to install the library using <cite>pip</cite> package manager within already existing virtual environment.</p>
+<section id="installation-the-library-with-poetry-from-provided-source-code">
+<h3>Installation the library with <cite>poetry</cite> from provided source code<a class="headerlink" href="#installation-the-library-with-poetry-from-provided-source-code" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
 <li><p>Installing  and initializing <cite>poetry</cite> through <cite>pipx</cite></p></li>
 </ol>
 <div class="literal-block-wrapper docutils container" id="id1">
@@ -125,50 +135,70 @@
 <li><p>Install project’s packets and documentation builder packets with <cite>poetry</cite></p></li>
 </ol>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">Specify that <cite>poetry</cite> will work with python version 3.11</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">poetry</span> <span class="n">env</span> <span class="n">use</span> <span class="mf">3.11</span>
+<div class="code-block-caption"><span class="caption-text">Specify that <cite>poetry</cite> will work with python version 3.13</span><a class="headerlink" href="#id4" title="Link to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    &gt; poetry env use 3.13
+
+The previous command will create virtual environment based on `python3.11` in subdirectory `/.venv`
 </pre></div>
 </div>
 </div>
-<p>The previous command will create virtual environment based on <cite>python3.11</cite> in subdirectory <cite>/.venv</cite></p>
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">Install dependencies (and documentation dependencies) with <cite>poetry</cite></span><a class="headerlink" href="#id5" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">poetry</span> <span class="n">install</span> <span class="o">--</span><span class="k">with</span> <span class="n">docs</span>
 </pre></div>
 </div>
 </div>
-</div></blockquote>
-</li>
-<li><p><strong>Running of all the unit tests within developed applications</strong></p>
-<blockquote>
-<div><ul class="simple">
-<li><p>Execute command for running tests from directory <cite>/</cite></p></li>
-</ul>
+</section>
+<section id="installation-the-library-with-pip-from-provided-source-code">
+<h3>Installation the library with <cite>pip</cite> from provided source code<a class="headerlink" href="#installation-the-library-with-pip-from-provided-source-code" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Create and activate virtual environment</p></li>
+</ol>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">Run all unit tests within project</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="code-block-caption"><span class="caption-text">Create and activate virtual environment</span><a class="headerlink" href="#id6" title="Link to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">venv</span>
+    <span class="o">&gt;</span> <span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>      <span class="c1"># On Linux</span>
+    <span class="o">&gt;</span> <span class="o">.</span>\<span class="n">venv</span>\<span class="n">Scripts</span>\<span class="n">activate</span>       <span class="c1"># On Windows</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Install required dependencies from <cite>requirements.txt</cite> file</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">Install dependencies with pip</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+    <span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">-</span><span class="n">docs</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="running-of-all-the-unit-tests-within-developed-library">
+<h2>Running of all the unit tests within developed library<a class="headerlink" href="#running-of-all-the-unit-tests-within-developed-library" title="Link to this heading"></a></h2>
+<p>Unit tests are located within <cite>tests</cite> subdirectory of each application. To run all the unit tests, the following commands can be used.</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">Run all unit tests within project</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
 </pre></div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Execute command for obtaining coverage analysis from directory <cite>/</cite></p></li>
-</ul>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">Obtain coverage analysis of tests within project</span><a class="headerlink" href="#id7" title="Link to this code"></a></div>
+<p>Obtaining coverage analysis of all unit tests within library can be done with <cite>coverage</cite> package. The following commands can be used depending on the way how the library was installed.</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">Obtain coverage analysis of tests within project</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">coverage</span> <span class="n">run</span> <span class="o">-</span><span class="n">m</span> <span class="n">unittest</span>
     <span class="o">&gt;</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">coverage</span> <span class="n">report</span>
 </pre></div>
 </div>
 </div>
-</div></blockquote>
-</li>
-<li><p><strong>Building documentation for the library</strong></p>
-<blockquote>
-<div><ol class="arabic simple">
+</section>
+<section id="building-documentation-for-the-library">
+<h2>Building documentation for the library<a class="headerlink" href="#building-documentation-for-the-library" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
 <li><p>Build documentation sources into <cite>/documentation/source</cite> folder from <cite>python</cite> source files</p></li>
 </ol>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">Build documentation sources</span><a class="headerlink" href="#id8" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">Build documentation sources</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">-</span><span class="n">o</span> <span class="n">documentation</span><span class="o">/</span><span class="n">source</span><span class="o">/</span> <span class="n">uo</span>
     <span class="o">&gt;</span> <span class="n">sphinx</span><span class="o">-</span><span class="n">apidoc</span> <span class="o">-</span><span class="n">o</span> <span class="n">documentation</span><span class="o">/</span><span class="n">source</span><span class="o">/</span> <span class="n">opt</span>
 </pre></div>
@@ -177,8 +207,8 @@
 <ol class="arabic simple" start="2">
 <li><p>Change current directory to <cite>/documentation</cite></p></li>
 </ol>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">Change directory</span><a class="headerlink" href="#id9" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">Change directory</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;</span> <span class="n">cd</span> <span class="n">documentation</span>
 </pre></div>
 </div>
@@ -186,8 +216,8 @@
 <ol class="arabic simple" start="3">
 <li><p>Clean previously builded HTML documentation</p></li>
 </ol>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">Clean HTML documentation</span><a class="headerlink" href="#id10" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">Clean HTML documentation</span><a class="headerlink" href="#id12" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">/</span><span class="n">documentation</span><span class="o">&gt;</span> <span class="o">./</span><span class="n">make</span> <span class="n">clean</span> <span class="n">html</span>
 </pre></div>
 </div>
@@ -195,8 +225,8 @@
 <ol class="arabic simple" start="4">
 <li><p>Build HTML documentation from <cite>/documentation/source</cite> directory. Created documentation is within <cite>/documentation/build/html</cite> directory.</p></li>
 </ol>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">Build HTML documentation</span><a class="headerlink" href="#id11" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">Build HTML documentation</span><a class="headerlink" href="#id13" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">/</span><span class="n">documentation</span><span class="o">&gt;</span> <span class="o">./</span><span class="n">make</span> <span class="n">html</span>
 </pre></div>
 </div>
@@ -204,15 +234,13 @@
 <ol class="arabic simple" start="5">
 <li><p>Generated documentation, that is in folder <cite>/documentation/build/html</cite> should be then copied into folder <cite>/docs</cite>.</p></li>
 </ol>
-<div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">Copy generated HTML documentation</span><a class="headerlink" href="#id12" title="Link to this code"></a></div>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">Copy generated HTML documentation</span><a class="headerlink" href="#id14" title="Link to this code"></a></div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">/</span><span class="n">documentation</span><span class="o">&gt;</span> <span class="n">cp</span> <span class="n">build</span><span class="o">/</span><span class="n">html</span><span class="o">/*.*</span> <span class="o">../</span><span class="n">docs</span>
 </pre></div>
 </div>
 </div>
-</div></blockquote>
-</li>
-</ul>
+</section>
 </section>
 
 

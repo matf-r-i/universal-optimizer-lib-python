@@ -15,6 +15,8 @@ Subpackages
 
    uo.algorithm.metaheuristic.simulated_annealing
 
+   uo.algorithm.metaheuristic.moead
+
 Submodules
 ----------
 

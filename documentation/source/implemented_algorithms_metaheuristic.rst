@@ -12,3 +12,5 @@ Implemented metaheuristic algorithms
     implemented_algorithms_simulated_annealing
     
     maml_metaheuristic
+
+    implemented_algorithms_moead

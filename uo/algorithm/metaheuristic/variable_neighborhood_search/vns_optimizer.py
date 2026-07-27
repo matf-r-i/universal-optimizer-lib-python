@@ -244,6 +244,7 @@ class VnsOptimizer(SingleSolutionMetaheuristic):
                 self.__k_current = self.k_min
             else:
                 self.__k_current += 1
+        self.__k_current = self.k_min
 
     def string_rep(self, delimiter:str, indentation:int=0, indentation_symbol:str='',group_start:str ='{', 
         group_end:str ='}')->str:

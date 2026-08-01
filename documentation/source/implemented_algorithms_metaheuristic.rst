@@ -14,3 +14,5 @@ Implemented metaheuristic algorithms
     maml_metaheuristic
 
     implemented_algorithms_moead
+
+    implemented_algorithms_aco

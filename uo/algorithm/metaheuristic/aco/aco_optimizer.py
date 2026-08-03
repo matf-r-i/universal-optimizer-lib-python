@@ -233,11 +233,24 @@ class AcoOptimizer(PopulationBasedMetaheuristic, metaclass=ABCMeta):
         """
         Update the MMAS pheromone bounds from the given best tour cost.
         """
-        self.__tau_max = 1.0 / (self.__rho * best_tour_cost)
+        if best_tour_cost <= 0:
+            raise ValueError("Parameter 'best_tour_cost' must be positive.")
+        if self.__rho <= 0 or self.__rho >= 1:
+            raise ValueError("Parameter 'rho' must be in the interval (0, 1).")
+        if not (0.0 < self.__p_best < 1.0):
+            raise ValueError("Parameter 'p_best' must be in the interval (0, 1).")
         n = self.problem.n
+        if n < 3:
+            raise ValueError("MMAS pheromone bounds require problem size n >= 3.")
+        self.__tau_max = 1.0 / (self.__rho * best_tour_cost)
         p = self.__p_best ** (1.0 / n)
         avg = n / 2
-        self.__tau_min = self.__tau_max * (1 - p) / ((avg - 1) * p)
+        denom = (avg - 1) * p
+        if denom <= 0:
+            raise ValueError("Invalid MMAS tau_min denominator; check 'p_best' and problem size 'n'.")
+        self.__tau_min = self.__tau_max * (1 - p) / denom
+        if self.__tau_min >= self.__tau_max:
+            self.__tau_min = self.__tau_max * 1e-4
 
     def init(self) -> None:
         """

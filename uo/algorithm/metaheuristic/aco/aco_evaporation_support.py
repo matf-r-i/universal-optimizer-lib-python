@@ -80,13 +80,15 @@ class AcoEvaporationSupportFixed(AcoEvaporationSupport):
                 optimizer.tau[a][b] *= (1.0 - rho)
 
         max_iterations = optimizer.finish_control.iterations_max
-        if max_iterations is not None and optimizer.iteration < max_iterations // 2:
+        if max_iterations <= 0 or optimizer.iteration < max_iterations // 2:
             deposit_solution = iteration_best_solution
         else:
             deposit_solution = global_best_solution
 
         deposit_tour = deposit_solution.representation.tour
         cost = deposit_solution.tour_cost(optimizer.problem, deposit_tour)
+        if cost <= 0:
+            raise ValueError(f"Pheromone deposit requires a positive tour cost (got {cost}).")
         deposit = 1.0 / cost
         for k in range(n):
             a, b = deposit_tour[k], deposit_tour[(k + 1) % n]
@@ -146,6 +148,8 @@ class AcoEvaporationSupportAdaptive(AcoEvaporationSupport):
 
         deposit_tour = deposit_solution.representation.tour
         cost = deposit_solution.tour_cost(optimizer.problem, deposit_tour)
+        if cost <= 0:
+            raise ValueError(f"Pheromone deposit requires a positive tour cost (got {cost}).")
         deposit = 1.0 / cost
         for k in range(n):
             a, b = deposit_tour[k], deposit_tour[(k + 1) % n]

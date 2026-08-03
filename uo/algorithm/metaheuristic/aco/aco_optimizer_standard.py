@@ -132,6 +132,7 @@ class AcoOptimizerStandard(AcoOptimizer):
 
         self.construction_support.local_search(self.problem, iteration_best_solution, self)
         iteration_best_solution.evaluate(self.problem)
+        self.evaluation += 1
 
         improved = iteration_best_solution.fitness_value > self.best_solution.fitness_value
         if improved:

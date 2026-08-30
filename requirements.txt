@@ -1,4 +1,4 @@
-﻿astroid==3.3.11
+astroid==3.3.11
 bitarray==3.8.0
 bitstring==4.3.1
 Bottleneck==1.6.0
@@ -34,7 +34,7 @@ pandas==2.3.3
 partd==1.4.2
 pathlib==1.0.1
 pillow==12.1.0
-pip==25.3
+pip==26.0
 platformdirs==4.5.1
 pluggy==1.6.0
 polars==1.37.1

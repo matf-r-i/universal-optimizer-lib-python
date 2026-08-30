@@ -17,6 +17,8 @@ Subpackages
 
    uo.algorithm.metaheuristic.moead
 
+   uo.algorithm.metaheuristic.aco
+
 Submodules
 ----------
 

@@ -1,26 +1,8 @@
-# Universal optimizer - Optimization algorithms library
+# Universal optimizer library
 
 Library `Universal optimizer` contains various optimization methods. Library is developed in `Python` programming language ver. 3.13, using `poetry` tool for project management, `unittest`  library for unit testing and `Sphinx` for documentation generation.
 
----
-
-[Documentation - Library](https://vladofilipovic.github.io/universal-optimizer/){:target="_blank"}
-
----
-
-[Documentation - Implemented methods](https://vladofilipovic.github.io/universal-optimizer/implemented_algorithms.html){:target="_blank"}
-
----
-
-Environment initialization with `poetry`:
-
-```bash
-
-poetry env use 311
-
-poetry install
-
-```
+Documentation for the library is given at the following [address](https://matf-r-i.github.io/universal-optimizer-lib-python/).
 
 ---
 

@@ -1,28 +1,28 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>uo.algorithm package &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+
   
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=01f34227"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
-        <script src="_static/copybutton.js?v=f281be69"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="uo.algorithm.exact package" href="uo.algorithm.exact.html" />
+    <link rel="next" title="uo.algorithm.bayesian_optimization package" href="uo.algorithm.bayesian_optimization.html" />
     <link rel="prev" title="uo package" href="uo.html" /> 
 </head>
 
@@ -50,14 +50,13 @@
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">In-depth Information</span></p>
+<p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="problems_to_be_solved.html">Problems to be solved</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Program code</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Library</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Universal optimization library</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="uo.html">uo package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="uo.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">uo.algorithm package</a></li>
@@ -71,7 +70,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html#optimization">Optimization</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
 <ul>
@@ -94,7 +92,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">Library</a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Universal optimization library</a></li>
           <li class="breadcrumb-item"><a href="uo.html">uo package</a></li>
       <li class="breadcrumb-item active">uo.algorithm package</li>
       <li class="wy-breadcrumbs-aside">
@@ -112,6 +110,81 @@
 <h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html">uo.algorithm.bayesian_optimization package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#module-uo.algorithm.bayesian_optimization.optimizer">Optimizer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.AcquisitionConfig"><code class="docutils literal notranslate"><span class="pre">AcquisitionConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.AcquisitionConfig.number_of_restarts"><code class="docutils literal notranslate"><span class="pre">AcquisitionConfig.number_of_restarts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.AcquisitionConfig.xi"><code class="docutils literal notranslate"><span class="pre">AcquisitionConfig.xi</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.acquisition_history"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.acquisition_history</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.bounds"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.bounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.copy"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.copy()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.evaluation_budget"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.evaluation_budget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.from_construction_tuple"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.from_construction_tuple()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.init"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.optimize"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.optimize()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.string_rep"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.string_rep()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.target_history"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.target_history</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizer.x_history"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizer.x_history</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.acquisition_config"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.acquisition_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.bounds"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.bounds</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.evaluation_budget"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.evaluation_budget</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.gaussian_process_config"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.gaussian_process_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.number_of_initial_points"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.number_of_initial_points</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.output_control"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.output_control</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.problem"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.problem</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.random_seed"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.random_seed</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.BayesianOptimizerConstructionParameters.solution_template"><code class="docutils literal notranslate"><span class="pre">BayesianOptimizerConstructionParameters.solution_template</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.GaussianProcessConfig"><code class="docutils literal notranslate"><span class="pre">GaussianProcessConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.GaussianProcessConfig.amplitude"><code class="docutils literal notranslate"><span class="pre">GaussianProcessConfig.amplitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.GaussianProcessConfig.jitter"><code class="docutils literal notranslate"><span class="pre">GaussianProcessConfig.jitter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.GaussianProcessConfig.length_scale"><code class="docutils literal notranslate"><span class="pre">GaussianProcessConfig.length_scale</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.optimizer.GaussianProcessConfig.mean_value"><code class="docutils literal notranslate"><span class="pre">GaussianProcessConfig.mean_value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#module-uo.algorithm.bayesian_optimization.gaussian_process">Gaussian process</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.gaussian_process.GaussianProcessRegressor"><code class="docutils literal notranslate"><span class="pre">GaussianProcessRegressor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.gaussian_process.GaussianProcessRegressor.fit"><code class="docutils literal notranslate"><span class="pre">GaussianProcessRegressor.fit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.gaussian_process.GaussianProcessRegressor.predict"><code class="docutils literal notranslate"><span class="pre">GaussianProcessRegressor.predict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#module-uo.algorithm.bayesian_optimization.kernels">Kernels</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.kernels.RBFKernel"><code class="docutils literal notranslate"><span class="pre">RBFKernel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.kernels.RBFKernel.amplitude"><code class="docutils literal notranslate"><span class="pre">RBFKernel.amplitude</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.kernels.RBFKernel.diagonal"><code class="docutils literal notranslate"><span class="pre">RBFKernel.diagonal()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.kernels.RBFKernel.length_scale"><code class="docutils literal notranslate"><span class="pre">RBFKernel.length_scale</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.kernels.RBFKernel.matrix"><code class="docutils literal notranslate"><span class="pre">RBFKernel.matrix()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#module-uo.algorithm.bayesian_optimization.acquisition">Acquisition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.acquisition.expected_improvement"><code class="docutils literal notranslate"><span class="pre">expected_improvement()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.acquisition_optimization.maximize_acquisition"><code class="docutils literal notranslate"><span class="pre">maximize_acquisition()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.acquisition_optimization.suggest_next_point"><code class="docutils literal notranslate"><span class="pre">suggest_next_point()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#module-uo.algorithm.bayesian_optimization.space">Search-space utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.space.clip_to_bounds"><code class="docutils literal notranslate"><span class="pre">clip_to_bounds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.space.from_unit_cube"><code class="docutils literal notranslate"><span class="pre">from_unit_cube()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.space.sample_uniform"><code class="docutils literal notranslate"><span class="pre">sample_uniform()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.space.to_unit_cube"><code class="docutils literal notranslate"><span class="pre">to_unit_cube()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.bayesian_optimization.html#uo.algorithm.bayesian_optimization.space.validate_bounds"><code class="docutils literal notranslate"><span class="pre">validate_bounds()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="uo.algorithm.exact.html">uo.algorithm.exact package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="uo.algorithm.exact.html#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="uo.algorithm.exact.total_enumeration.html">uo.algorithm.exact.total_enumeration package</a><ul>
@@ -149,6 +222,18 @@
 <li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.simulated_annealing.html#uo-algorithm-metaheuristic-simulated-annealing-sa-temperature-support-module">uo.algorithm.metaheuristic.simulated_annealing.sa_temperature_support module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.simulated_annealing.html#uo-algorithm-metaheuristic-simulated-annealing-sa-temperature-support-exponential-decay-module">uo.algorithm.metaheuristic.simulated_annealing.sa_temperature_support_exponential_decay module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.simulated_annealing.html#module-uo.algorithm.metaheuristic.simulated_annealing">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html">uo.algorithm.metaheuristic.moead package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead.moead_optimizer">uo.algorithm.metaheuristic.moead.moead_optimizer module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead.moead_variation_support">uo.algorithm.metaheuristic.moead.moead_variation_support module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead.moead_variation_support_real">uo.algorithm.metaheuristic.moead.moead_variation_support_real module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead.moead_variation_support_binary">uo.algorithm.metaheuristic.moead.moead_variation_support_binary module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead.moead_decomposition">uo.algorithm.metaheuristic.moead.moead_decomposition module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead.moead_weights">uo.algorithm.metaheuristic.moead.moead_weights module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead.moead_metrics">uo.algorithm.metaheuristic.moead.moead_metrics module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.algorithm.metaheuristic.moead.html#module-uo.algorithm.metaheuristic.moead">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -221,7 +306,7 @@
 <p>The <a class="reference internal" href="#module-uo.algorithm.algorithm" title="uo.algorithm.algorithm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">algorithm</span></code></a> module describes the class <code class="xref py py-class docutils literal notranslate"><span class="pre">Algorithm</span></code>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="uo.algorithm.algorithm.Algorithm">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.algorithm.</span></span><span class="sig-name descname"><span class="pre">Algorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">uo.algorithm.algorithm.</span></span><span class="sig-name descname"><span class="pre">Algorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Optimizer</span></code></p>
 <p>This class describes Algorithm.</p>
 <dl class="py attribute">
@@ -322,7 +407,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.algorithm.Algorithm.best_solution">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">best_solution</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></em><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.best_solution" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">best_solution</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.best_solution" title="Link to this definition"></a></dt>
 <dd><p>Property getter for the best solution obtained during metaheuristic execution</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -336,7 +421,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="id0">
-<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
 <dd><p>Copy the current optimizer</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -370,7 +455,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.algorithm.Algorithm.evaluation">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.evaluation" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">evaluation</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.evaluation" title="Link to this definition"></a></dt>
 <dd><p>Property getter for current number of evaluations during algorithm execution</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -384,7 +469,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.algorithm.Algorithm.evaluation_best_found">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaluation_best_found</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.evaluation_best_found" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">evaluation_best_found</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.evaluation_best_found" title="Link to this definition"></a></dt>
 <dd><p>Property getter for the evaluation when the best solution is found</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -398,7 +483,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.algorithm.Algorithm.iteration">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">iteration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.iteration" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">iteration</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.iteration" title="Link to this definition"></a></dt>
 <dd><p>Property getter for the iteration of metaheuristic execution</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -412,7 +497,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.algorithm.Algorithm.iteration_best_found">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">iteration_best_found</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.iteration_best_found" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">iteration_best_found</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><a class="headerlink" href="#uo.algorithm.algorithm.Algorithm.iteration_best_found" title="Link to this definition"></a></dt>
 <dd><p>Property getter for the iteration when the best solution is found</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -426,7 +511,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="id1">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">solution_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">solution_template</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><a class="headerlink" href="#id1" title="Link to this definition"></a></dt>
 <dd><p>Property getter for the solution template for the problem to be solved</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -469,7 +554,7 @@ Formatted ‘Algorithm’ instance.</p>
 <p>The <a class="reference internal" href="#module-uo.algorithm.output_control" title="uo.algorithm.output_control"><code class="xref py py-mod docutils literal notranslate"><span class="pre">output_control</span></code></a> module describes the class <code class="xref py py-class docutils literal notranslate"><span class="pre">OutputControl</span></code>.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.output_control.</span></span><span class="sig-name descname"><span class="pre">OutputControl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">TextIOWrapper</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'iteration,</span> <span class="pre">evaluation,</span> <span class="pre">&quot;step_name&quot;,</span> <span class="pre">best_solution.string_representation(),</span> <span class="pre">best_solution.fitness_value,</span> <span class="pre">best_solution.objective_value,</span> <span class="pre">best_solution.is_feasible'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">moments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'after_algorithm'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">uo.algorithm.output_control.</span></span><span class="sig-name descname"><span class="pre">OutputControl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/io.html#io.TextIOWrapper" title="(in Python v3.14)"><span class="pre">TextIOWrapper</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'iteration,</span> <span class="pre">evaluation,</span> <span class="pre">&quot;step_name&quot;,</span> <span class="pre">best_solution.string_representation(),</span> <span class="pre">best_solution.fitness_value,</span> <span class="pre">best_solution.objective_value,</span> <span class="pre">best_solution.is_feasible'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">moments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'after_algorithm'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
 <p>This class determine where the output generated during execution of the
 <code class="xref py py-class docutils literal notranslate"><span class="pre">uo.algorithm.Algorithm</span></code> instance will be written</p>
@@ -489,7 +574,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.fields">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.fields" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fields</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.fields" title="Link to this definition"></a></dt>
 <dd><p>Property getter for <cite>fields_definitions</cite> property</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -503,7 +588,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.fields_definitions">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fields_definitions</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.fields_definitions" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fields_definitions</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.fields_definitions" title="Link to this definition"></a></dt>
 <dd><p>Property getter for <cite>fields_definitions</cite> property</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -517,7 +602,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.fields_headings">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">fields_headings</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.fields_headings" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">fields_headings</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.fields_headings" title="Link to this definition"></a></dt>
 <dd><p>Property getter for <cite>fields_headings</cite> property</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -531,7 +616,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.moments">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">moments</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.moments" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">moments</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.moments" title="Link to this definition"></a></dt>
 <dd><p>Property getter for moments property</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -545,7 +630,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.output_file">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">output_file</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">TextIOWrapper</span></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.output_file" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">output_file</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/io.html#io.TextIOWrapper" title="(in Python v3.14)"><span class="pre">TextIOWrapper</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.output_file" title="Link to this definition"></a></dt>
 <dd><p>Property getter for output file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -582,7 +667,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_after_algorithm">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_after_algorithm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_algorithm" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_after_algorithm</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_algorithm" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_after_algorithm</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -596,7 +681,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_after_evaluation">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_after_evaluation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_evaluation" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_after_evaluation</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_evaluation" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_after_evaluation</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -610,7 +695,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_after_iteration">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_after_iteration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_iteration" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_after_iteration</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_iteration" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_after_iteration</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -624,7 +709,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_after_step_in_iteration">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_after_step_in_iteration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_step_in_iteration" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_after_step_in_iteration</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_after_step_in_iteration" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_after_step_in_iteration</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -638,7 +723,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_before_algorithm">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_before_algorithm</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_algorithm" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_before_algorithm</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_algorithm" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_before_algorithm</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -652,7 +737,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_before_evaluation">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_before_evaluation</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_evaluation" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_before_evaluation</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_evaluation" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_before_evaluation</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -666,7 +751,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_before_iteration">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_before_iteration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_iteration" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_before_iteration</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_iteration" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_before_iteration</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -680,7 +765,7 @@ Formatted ‘Algorithm’ instance.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="uo.algorithm.output_control.OutputControl.write_before_step_in_iteration">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">write_before_step_in_iteration</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></em><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_step_in_iteration" title="Link to this definition"></a></dt>
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">write_before_step_in_iteration</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#uo.algorithm.output_control.OutputControl.write_before_step_in_iteration" title="Link to this definition"></a></dt>
 <dd><p>Property getter for property <cite>write_before_step_in_iteration</cite></p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -705,7 +790,7 @@ Formatted ‘Algorithm’ instance.</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="uo.html" class="btn btn-neutral float-left" title="uo package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="uo.algorithm.exact.html" class="btn btn-neutral float-right" title="uo.algorithm.exact package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="uo.algorithm.bayesian_optimization.html" class="btn btn-neutral float-right" title="uo.algorithm.bayesian_optimization package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -7,6 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
+   uo.algorithm.bayesian_optimization
    uo.algorithm.exact
    uo.algorithm.metaheuristic
 

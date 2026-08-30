@@ -156,7 +156,7 @@ class TestGaOptimizerGenerational(unittest.TestCase):
         ga_optimizer.init()
         # Assert
         # Add assertions here
-        self.assertEqual( ga_optimizer.evaluation, 1)
+        self.assertEqual( ga_optimizer.evaluation, 1 * population_size)
 
     # GaOptimizerGenerational raises TypeError if finish_control parameter is not of type FinishControl
     def test_finish_control_type_error(self):

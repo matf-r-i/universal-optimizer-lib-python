@@ -1,3 +1,11 @@
+"""
+..  _py_tabu_search_optimizer:
+
+The :mod:`~uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer` contains class
+:class:`~uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer`, that implements
+:ref:`Tabu Search<Algorithm_Tabu_Search>` algorithm.
+"""
+
 from pathlib import Path
 directory = Path(__file__).resolve()
 import sys
@@ -24,6 +32,10 @@ from uo.algorithm.metaheuristic.tabu_search.tabu_search_support import TabuSearc
 
 @dataclass
 class TabuSearchOptimizerConstructionParameters:
+    """
+    Instance of the class :class:`~uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.
+    TabuSearchOptimizerConstructionParameters` represents constructor parameters for Tabu Search algorithm.
+    """
     def __init__(self):
         pass
 
@@ -38,6 +50,17 @@ class TabuSearchOptimizerConstructionParameters:
 
 
 class TabuSearchOptimizer(SingleSolutionMetaheuristic):
+    """
+    Instance of the class :class:`~uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer`
+    encapsulates :ref:`Algorithm_Tabu_Search` optimization algorithm.
+
+    Tabu Search is a single-solution, neighborhood-based metaheuristic. At each iteration it moves to the
+    best neighbor of the current solution that is not forbidden by the tabu list -- a short-term memory of
+    recently applied moves -- unless that neighbor is better than the best solution found so far, in which
+    case it is accepted regardless of the tabu status (aspiration criterion). Allowing temporarily
+    non-improving moves lets the search escape local optima without random perturbation.
+    """
+
     def __init__(self,
             tabu_search_support: TabuSearchSupport,
             tabu_tenure: int,
@@ -48,6 +71,21 @@ class TabuSearchOptimizer(SingleSolutionMetaheuristic):
             random_seed: Optional[int] = None,
             additional_statistics_control: Optional[AdditionalStatisticsControl] = None
         ) -> None:
+        """
+        Create new instance of class :class:`~uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.
+        TabuSearchOptimizer`. That instance implements :ref:`Tabu Search<Algorithm_Tabu_Search>` algorithm.
+
+        :param `TabuSearchSupport` tabu_search_support: placeholder for neighborhood exploration method,
+        specific for Tabu Search execution, which depends on precise solution type
+        :param int tabu_tenure: number of most recent moves kept as tabu (forbidden) by the algorithm
+        :param `FinishControl` finish_control: structure that control finish criteria for metaheuristic execution
+        :param `Problem` problem: problem to be solved
+        :param `Optional[Solution]` solution_template: initial solution of the problem
+        :param `Optional[OutputControl]` output_control: structure that controls output
+        :param `Optional[int]` random_seed: random seed for metaheuristic execution
+        :param `Optional[AdditionalStatisticsControl]` additional_statistics_control: structure that controls
+        additional statistics obtained during metaheuristic execution
+        """
 
         if not isinstance(tabu_search_support, TabuSearchSupport):
             raise TypeError('Parameter \'tabu_search_support\' must be \'TabuSearchSupport\'.')
@@ -67,6 +105,12 @@ class TabuSearchOptimizer(SingleSolutionMetaheuristic):
         self.__tabu_list: Optional[TabuList] = None
 
     def copy(self):
+        """
+        Copy the `TabuSearchOptimizer`
+
+        :return: new `TabuSearchOptimizer` instance with the same properties
+        :rtype: `TabuSearchOptimizer`
+        """
         tss: Optional[TabuSearchSupport] = None
         if self.tabu_search_support is not None:
             tss = self.tabu_search_support.copy()
@@ -97,6 +141,13 @@ class TabuSearchOptimizer(SingleSolutionMetaheuristic):
 
     @classmethod
     def from_construction_tuple(cls, construction_tuple: TabuSearchOptimizerConstructionParameters):
+        """
+        Additional constructor, that creates new instance of class :class:`~uo.algorithm.metaheuristic.
+        tabu_search.tabu_search_optimizer.TabuSearchOptimizer`.
+
+        :param `TabuSearchOptimizerConstructionParameters` construction_tuple: tuple with all constructor
+        parameters
+        """
         return cls(
             construction_tuple.tabu_search_support,
             construction_tuple.tabu_tenure,
@@ -110,17 +161,38 @@ class TabuSearchOptimizer(SingleSolutionMetaheuristic):
 
     @property
     def tabu_search_support(self) -> TabuSearchSupport:
+        """
+        Property getter for the neighborhood exploration support used by Tabu Search
+
+        :return: neighborhood exploration support used by Tabu Search
+        :rtype: `TabuSearchSupport`
+        """
         return self.__tabu_search_support
 
     @property
     def tabu_tenure(self) -> int:
+        """
+        Property getter for the tabu tenure parameter of the Tabu Search algorithm
+
+        :return: tabu tenure parameter
+        :rtype: int
+        """
         return self.__tabu_tenure
 
     @property
     def tabu_list(self) -> Optional[TabuList]:
+        """
+        Property getter for the tabu list used during Tabu Search execution
+
+        :return: tabu list used during execution, or `None` before initialization
+        :rtype: `Optional[TabuList]`
+        """
         return self.__tabu_list
 
     def init(self) -> None:
+        """
+        Initialization of the Tabu Search algorithm
+        """
         self.__tabu_list = TabuList(self.tabu_tenure)
         self.current_solution = self.solution_template.copy()
         self.current_solution.copy_from(self.solution_template)
@@ -130,6 +202,9 @@ class TabuSearchOptimizer(SingleSolutionMetaheuristic):
         self.best_solution = self.current_solution
 
     def main_loop_iteration(self) -> None:
+        """
+        One iteration within main loop of the Tabu Search algorithm
+        """
         self.iteration += 1
         self.write_output_values_if_needed("before_step_in_iteration", "best_neighbor_move")
         move = self.__tabu_search_support.best_neighbor_move(self.problem, self.current_solution,
@@ -144,6 +219,22 @@ class TabuSearchOptimizer(SingleSolutionMetaheuristic):
 
     def string_rep(self, delimiter: str, indentation: int = 0, indentation_symbol: str = '', group_start: str = '{',
             group_end: str = '}') -> str:
+        """
+        String representation of the `TabuSearchOptimizer` instance
+
+        :param delimiter: delimiter between fields
+        :type delimiter: str
+        :param indentation: level of indentation
+        :type indentation: int, optional, default value 0
+        :param indentation_symbol: indentation symbol
+        :type indentation_symbol: str, optional, default value ''
+        :param group_start: group start string
+        :type group_start: str, optional, default value '{'
+        :param group_end: group end string
+        :type group_end: str, optional, default value '}'
+        :return: string representation of instance that controls output
+        :rtype: str
+        """
         s = delimiter
         for _ in range(0, indentation):
             s += indentation_symbol
@@ -168,12 +259,31 @@ class TabuSearchOptimizer(SingleSolutionMetaheuristic):
         return s
 
     def __str__(self) -> str:
+        """
+        String representation of the `TabuSearchOptimizer` instance
+
+        :return: string representation of the `TabuSearchOptimizer` instance
+        :rtype: str
+        """
         s = self.string_rep('|')
         return s
 
     def __repr__(self) -> str:
+        """
+        String representation of the `TabuSearchOptimizer` instance
+
+        :return: string representation of the `TabuSearchOptimizer` instance
+        :rtype: str
+        """
         s = self.string_rep('\n')
         return s
 
     def __format__(self, spec: str) -> str:
+        """
+        Formatted the TabuSearchOptimizer instance
+
+        :param spec: str -- format specification
+        :return: formatted `TabuSearchOptimizer` instance
+        :rtype: str
+        """
         return self.string_rep('\n', 0, '   ', '{', '}')

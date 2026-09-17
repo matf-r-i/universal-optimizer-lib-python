@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from random import Random
 
 from uo.algorithm.metaheuristic.additional_statistics_control import (
     AdditionalStatisticsControl,
@@ -160,6 +161,7 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
         self.__chemotactic_step = 0
         self.__reproduction_step = 0
         self.__elimination_dispersal_step = 0
+        self.__random_generator = Random(self.random_seed)
 
     @staticmethod
     def _validate_strategy(name: str, value: object, expected_type: type) -> None:
@@ -355,12 +357,150 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
     def init(self) -> None:
         """Initialize BFO runtime state 
         """
-        raise NotImplementedError("not implemented")
+        self.__random_generator = Random(self.random_seed)
+        self.evaluation = 0
+        self.iteration = 0
+        self.__chemotactic_step = 0
+        self.__reproduction_step = 0
+        self.__elimination_dispersal_step = 0
+        self.__current_population = []
+        self.__health = []
+        self.__step_sizes = []
+
+        for _ in range(self.population_size):
+            bacterium = self.solution_template.copy()
+            bacterium.init_random(self.problem)
+            bacterium.evaluate(self.problem)
+            self.evaluation += 1
+            self.__current_population.append(bacterium)
+            self.__health.append(0.0)
+            self.__step_sizes.append(self._validated_step_size(
+                self.step_size_support.initial_step_size()
+            ))
+
+        self.best_solution = max(
+            self.current_population,
+            key=lambda bacterium: bacterium.fitness_value,
+        )
+        self.update_additional_statistics_if_required(self.best_solution)
+
+    def should_finish(self) -> bool:
+        """Return whether BFO reached an external or natural stopping condition"""
+        return (
+            self.elimination_dispersal_step >= self.elimination_dispersal_events
+            or super().should_finish()
+        )
 
     def main_loop_iteration(self) -> None:
         """Execute one chemotactic sweep 
         """
-        raise NotImplementedError("not implemented")
+        for index, bacterium in enumerate(self.__current_population):
+            direction = self.movement_support.tumble_direction(
+                bacterium,
+                self.__random_generator,
+            )
+            current = bacterium
+            current_effective_fitness = self._effective_fitness(current)
+            health = 0.0
+
+            for _ in range(self.swim_length + 1):
+                candidate = self.movement_support.move(
+                    current,
+                    direction,
+                    self.__step_sizes[index],
+                    self.problem,
+                )
+                if not isinstance(candidate, Solution):
+                    raise TypeError("BFO movement support must return a Solution")
+                candidate.evaluate(self.problem)
+                self.evaluation += 1
+                candidate_effective_fitness = self._effective_fitness(candidate)
+                improved = candidate_effective_fitness > current_effective_fitness
+                self.__step_sizes[index] = self._validated_step_size(
+                    self.step_size_support.adapt(
+                        self.__step_sizes[index],
+                        improved,
+                    )
+                )
+
+                if not improved:
+                    health += current_effective_fitness
+                    break
+
+                current = candidate
+                current_effective_fitness = candidate_effective_fitness
+                health += current_effective_fitness
+                self.__current_population[index] = current
+                self._update_best_solution(current)
+
+            self.__health[index] = health
+
+        self.__chemotactic_step += 1
+        self.iteration += 1
+
+        if self.__chemotactic_step < self.chemotactic_steps:
+            return
+
+        self.__chemotactic_step = 0
+        self.__reproduction_step += 1
+        if self.__reproduction_step < self.reproduction_steps:
+            return
+
+        self.__reproduction_step = 0
+        self._reproduce()
+        self._eliminate_and_disperse()
+        self.__elimination_dispersal_step += 1
+
+    def _effective_fitness(self, bacterium: Solution) -> float:
+        interaction = self.swarming_support.interaction_value(
+            bacterium,
+            self.__current_population,
+        )
+        if isinstance(interaction, bool) or not isinstance(interaction, (int, float)):
+            raise TypeError("BFO swarming support must return a number")
+        return float(bacterium.fitness_value) + float(interaction)
+
+    def _update_best_solution(self, candidate: Solution) -> None:
+        if self.best_solution is None or candidate.is_better(self.best_solution, self.problem):
+            self.best_solution = candidate
+            self.update_additional_statistics_if_required(candidate)
+
+    def _reproduce(self) -> None:
+        ranked_indices = sorted(
+            range(self.population_size),
+            key=lambda index: self.__health[index],
+            reverse=True,
+        )
+        half = self.population_size // 2
+        for position in range(half, self.population_size):
+            source = ranked_indices[position - half]
+            replacement = self.__current_population[source].copy()
+            self.__current_population[position] = replacement
+            self.__health[position] = self.__health[source]
+            self.__step_sizes[position] = self.__step_sizes[source]
+
+    def _eliminate_and_disperse(self) -> None:
+        for index, bacterium in enumerate(self.__current_population):
+            if self.__random_generator.random() >= self.elimination_dispersal_probability:
+                continue
+            replacement = self.solution_template.copy()
+            replacement.init_random(self.problem)
+            replacement.evaluate(self.problem)
+            self.evaluation += 1
+            self.__current_population[index] = replacement
+            self.__health[index] = 0.0
+            self.__step_sizes[index] = self._validated_step_size(
+                self.step_size_support.initial_step_size()
+            )
+            self._update_best_solution(replacement)
+
+    @staticmethod
+    def _validated_step_size(value: object) -> float:
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            raise TypeError("BFO step-size support must return a number")
+        if value <= 0:
+            raise ValueError("BFO step-size support must return a positive value")
+        return float(value)
 
     def string_rep(
         self,

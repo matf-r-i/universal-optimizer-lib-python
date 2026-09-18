@@ -235,7 +235,7 @@ class TestBfoOptimizer(unittest.TestCase):
         self.assertEqual(optimizer.elimination_dispersal_step, 0)
         self.assertTrue(optimizer.should_finish())
 
-    def test_copy_preserves_configured_strategies_and_runtime_state(self):
+    def test_copy_preserves_configuration_and_has_clean_runtime_state(self):
         optimizer = self.make_optimizer(chemotactic_steps=1)
         optimizer.init()
         optimizer.main_loop_iteration()
@@ -245,14 +245,20 @@ class TestBfoOptimizer(unittest.TestCase):
         self.assertIsNot(optimizer, copied)
         self.assertIsInstance(copied.step_size_support, BfoStepSizeSupportFixed)
         self.assertIsInstance(copied.swarming_support, BfoSwarmingSupportIdle)
-        self.assertEqual(copied.step_sizes, optimizer.step_sizes)
-        self.assertEqual(copied.health, optimizer.health)
-        self.assertEqual(len(copied.current_population), len(optimizer.current_population))
-        self.assertIsNot(copied.current_population, optimizer.current_population)
-        self.assertEqual(copied.execution_started, optimizer.execution_started)
-        self.assertEqual(copied.execution_ended, optimizer.execution_ended)
-        self.assertEqual(copied.time_when_best_found, optimizer.time_when_best_found)
-        self.assertIsNot(copied.best_solution, optimizer.best_solution)
+        self.assertIsNot(copied.movement_support, optimizer.movement_support)
+        self.assertIsNot(copied.step_size_support, optimizer.step_size_support)
+        self.assertIsNot(copied.swarming_support, optimizer.swarming_support)
+        self.assertEqual(copied.population_size, optimizer.population_size)
+        self.assertEqual(copied.chemotactic_steps, optimizer.chemotactic_steps)
+        self.assertEqual(copied.current_population, [])
+        self.assertEqual(copied.health, [])
+        self.assertEqual(copied.step_sizes, [])
+        self.assertEqual(copied.evaluation, 0)
+        self.assertEqual(copied.iteration, 0)
+        self.assertIsNone(copied.execution_started)
+        self.assertIsNone(copied.execution_ended)
+        self.assertIsNone(copied.best_solution)
+        self.assertIsNone(copied.time_when_best_found)
         self.assertIn("bfo", str(optimizer))
 
     def test_construction_parameters_create_equivalent_optimizer(self):

@@ -21,9 +21,7 @@
         <script src="_static/copybutton.js?v=f281be69"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Universal optimization library" href="modules.html" />
-    <link rel="prev" title="Ant Colony Optimization" href="implemented_algorithms_aco.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,30 +49,8 @@
 <li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="implemented_algorithms_bayesian_optimization.html">Bayesian Optimization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="implemented_algorithms_exact.html">Implemented exact algorithms</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_variable_neighborhood_search.html">Variable Neighborhood Search</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_genetic_algorithm.html">Genetic Algorithm</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_simulated_annealing.html">Simulated Annealing</a></li>
-<li class="toctree-l3"><a class="reference internal" href="maml_metaheuristic.html">MAML Metaheuristic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_moead.html">MOEA/D</a></li>
-<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_aco.html">Ant Colony Optimization</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Bacterial Foraging Optimization</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#basic-information">Basic information</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#implementation-notes">Implementation notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#algorithm-steps">Algorithm steps</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#stopping-cost-and-limitations">Stopping, cost, and limitations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#api-reference">API reference</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Program code</span></p>
 <ul>
@@ -101,8 +77,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="implemented_algorithms.html">Implemented algorithms</a></li>
-          <li class="breadcrumb-item"><a href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a></li>
       <li class="breadcrumb-item active">Bacterial Foraging Optimization</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/implemented_algorithms_bacterial_foraging.rst.txt" rel="nofollow"> View page source</a>
@@ -199,9 +173,9 @@ before natural termination.</p></li>
 for each bacterium, in <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">finish_control</span></code>: evaluation, iteration, and/or time stopping criteria.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">problem</span></code>: concrete single-objective
-<a class="reference internal" href="uo.problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">Problem</span></code></a>.</p></li>
+<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">Problem</span></code></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">solution_template</span></code>: concrete
-<a class="reference internal" href="uo.solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solution</span></code></a> used to initialize and copy
+<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solution</span></code></a> used to initialize and copy
 bacteria.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">output_control</span></code>: optional output configuration.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">random_seed</span></code>: optional seed for BFO’s private random generator.</p></li>
@@ -295,10 +269,7 @@ autodoc reference and exported classes.</p>
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="implemented_algorithms_aco.html" class="btn btn-neutral float-left" title="Ant Colony Optimization" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="modules.html" class="btn btn-neutral float-right" title="Universal optimization library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

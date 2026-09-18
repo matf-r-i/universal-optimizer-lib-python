@@ -222,12 +222,12 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
         )
 
     def copy(self) -> BfoOptimizer:
-        """Return a copy of this optimizer and its mutable runtime state
+        """Return a new BFO optimizer with the same configuration
 
         :return: copied BFO optimizer
         :rtype: BfoOptimizer
         """
-        copied = BfoOptimizer(
+        return BfoOptimizer(
             movement_support=self.movement_support.copy(),
             swarming_support=self.swarming_support.copy(),
             step_size_support=self.step_size_support.copy(),
@@ -248,22 +248,6 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
             random_seed=self.random_seed,
             additional_statistics_control=self.additional_statistics_control,
         )
-        copied.__current_population = [
-            bacterium.copy() for bacterium in self.current_population
-        ]
-        copied.__health = self.health.copy()
-        copied.__step_sizes = self.step_sizes.copy()
-        copied.__chemotactic_step = self.chemotactic_step
-        copied.__reproduction_step = self.reproduction_step
-        copied.__elimination_dispersal_step = self.elimination_dispersal_step
-        copied.evaluation = self.evaluation
-        copied.iteration = self.iteration
-        self._copy_runtime_state_to(copied)
-        copied.__random_generator.setstate(self.__random_generator.getstate())
-        if self.best_solution is not None:
-            copied.evaluation_best_found = self.evaluation_best_found
-            copied.iteration_best_found = self.iteration_best_found
-        return copied
 
     @property
     def movement_support(self) -> BfoMovementSupport:

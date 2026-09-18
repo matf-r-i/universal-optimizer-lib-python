@@ -154,19 +154,6 @@ class Optimizer(metaclass=ABCMeta):
         self.__best_solution = value.copy()
         self.__time_when_best_found = (datetime.now() - self.execution_started).total_seconds()
 
-    def _copy_runtime_state_to(self, copied: "Optimizer") -> None:
-        """Copy execution metadata without re-running timestamp-dependent setters."""
-        if not isinstance(copied, Optimizer):
-            raise TypeError("Parameter 'copied' must be 'Optimizer'.")
-        copied.__execution_started = self.__execution_started
-        copied.__execution_ended = self.__execution_ended
-        copied.__best_solution = (
-            self.__best_solution.copy()
-            if self.__best_solution is not None
-            else None
-        )
-        copied.__time_when_best_found = self.__time_when_best_found
-
     @property
     def output_control(self)->Optional[OutputControl]:
         """

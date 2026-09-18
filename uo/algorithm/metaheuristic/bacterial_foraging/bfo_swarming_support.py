@@ -10,11 +10,11 @@ from uo.solution.solution import Solution
 
 
 class BfoSwarmingSupport(metaclass=ABCMeta):
-    """Calculate the temporary social contribution to bacterial fitness."""
+    """Calculate the temporary social contribution to bacterial fitness"""
 
     @abstractmethod
     def copy(self) -> BfoSwarmingSupport:
-        """Return an independent copy of this swarming strategy.
+        """Return an independent copy of this swarming strategy
 
         :return: copied swarming strategy
         :rtype: BfoSwarmingSupport
@@ -27,11 +27,11 @@ class BfoSwarmingSupport(metaclass=ABCMeta):
         bacterium: Solution,
         population: list[Solution],
     ) -> float:
-        """Return the social-fitness adjustment for one bacterium.
+        """Return the social-fitness adjustment for one bacterium
 
         The optimizer adds this value to the bacterium's fitness. Therefore,
         positive values improve effective fitness under the library's
-        higher-fitness-is-better convention. Implementations must not mutate
+        higher fitness is better convention. Implementations must not mutate
         the bacterium or overwrite its objective and fitness values.
 
         :param Solution bacterium: bacterium for which interaction is measured
@@ -90,18 +90,22 @@ class BfoSwarmingSupportReal(BfoSwarmingSupport):
 
     @property
     def attractant_depth(self) -> float:
+        """Return the attraction amplitude."""
         return self.__attractant_depth
 
     @property
     def attractant_width(self) -> float:
+        """Return the attraction distance-decay coefficient."""
         return self.__attractant_width
 
     @property
     def repellent_height(self) -> float:
+        """Return the repulsion amplitude."""
         return self.__repellent_height
 
     @property
     def repellent_width(self) -> float:
+        """Return the repulsion distance-decay coefficient."""
         return self.__repellent_width
 
     def interaction_value(self, bacterium: Solution, population: list[Solution]) -> float:

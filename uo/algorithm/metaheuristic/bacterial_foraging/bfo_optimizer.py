@@ -451,8 +451,8 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
 
         self.__reproduction_step = 0
         self._reproduce()
-        self._eliminate_and_disperse()
-        self.__elimination_dispersal_step += 1
+        if self._eliminate_and_disperse():
+            self.__elimination_dispersal_step += 1
 
     def _effective_fitness(self, bacterium: Solution) -> float:
         interaction = self.swarming_support.interaction_value(
@@ -482,10 +482,10 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
             self.__health[position] = self.__health[source]
             self.__step_sizes[position] = self.__step_sizes[source]
 
-    def _eliminate_and_disperse(self) -> None:
-        for index, bacterium in enumerate(self.__current_population):
+    def _eliminate_and_disperse(self) -> bool:
+        for index, _ in enumerate(self.__current_population):
             if self._evaluation_limit_reached():
-                return
+                return False
             if self.__random_generator.random() >= self.elimination_dispersal_probability:
                 continue
             replacement = self.solution_template.copy()
@@ -498,6 +498,7 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
                 self.step_size_support.initial_step_size()
             )
             self._update_best_solution(replacement)
+        return True
 
     def _evaluation_limit_reached(self) -> bool:
         return (

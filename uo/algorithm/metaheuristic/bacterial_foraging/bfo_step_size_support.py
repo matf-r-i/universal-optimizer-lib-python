@@ -53,6 +53,7 @@ class BfoStepSizeSupportFixed(BfoStepSizeSupport):
 
     @property
     def step_size(self) -> float:
+        """Return the configured fixed chemotactic step size."""
         return self.__step_size
 
     def copy(self) -> BfoStepSizeSupportFixed:
@@ -113,22 +114,27 @@ class BfoStepSizeSupportAdaptive(BfoStepSizeSupport):
 
     @property
     def initial_step_size_value(self) -> float:
+        """Return the initial value used for adaptive step sizes."""
         return self.__initial_step_size
 
     @property
     def minimum_step_size(self) -> float:
+        """Return the lower clamp for adaptive step sizes."""
         return self.__minimum_step_size
 
     @property
     def maximum_step_size(self) -> float:
+        """Return the upper clamp for adaptive step sizes."""
         return self.__maximum_step_size
 
     @property
     def increase_factor(self) -> float:
+        """Return the factor applied after an improving move."""
         return self.__increase_factor
 
     @property
     def decrease_factor(self) -> float:
+        """Return the factor applied after a rejected move."""
         return self.__decrease_factor
 
     def initial_step_size(self) -> float:

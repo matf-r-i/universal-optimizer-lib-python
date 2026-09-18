@@ -23,6 +23,26 @@ class BfoMovementSupport(metaclass=ABCMeta):
         """
         raise NotImplementedError
 
+    @abstractmethod
+    def tumble_direction(
+        self,
+        solution: Solution,
+        random_generator: Random,
+    ) -> object:
+        """Generate one representation-specific tumble direction."""
+        raise NotImplementedError
+
+    @abstractmethod
+    def move(
+        self,
+        solution: Solution,
+        direction: object,
+        step_size: float,
+        problem: Problem,
+    ) -> Solution:
+        """Create a moved candidate without mutating ``solution``."""
+        raise NotImplementedError
+
 
 class BfoMovementSupportReal(BfoMovementSupport):
     """Move list or tuple based real representations inside bounds."""
@@ -56,10 +76,12 @@ class BfoMovementSupportReal(BfoMovementSupport):
 
     @property
     def lower_bounds(self) -> tuple[float, ...]:
+        """Return the inclusive lower bound for each real dimension."""
         return self.__lower_bounds
 
     @property
     def upper_bounds(self) -> tuple[float, ...]:
+        """Return the inclusive upper bound for each real dimension."""
         return self.__upper_bounds
 
     def copy(self) -> BfoMovementSupportReal:
@@ -107,43 +129,3 @@ class BfoMovementSupportReal(BfoMovementSupport):
         candidate = solution.copy()
         candidate.init_from(tuple(moved) if isinstance(representation, tuple) else moved, problem)
         return candidate
-
-    @abstractmethod
-    def tumble_direction(
-        self,
-        solution: Solution,
-        random_generator: Random,
-    ) -> object:
-        """Generate one tumble direction for ``solution``.
-
-        The returned object's concrete type is representation-specific and is
-        passed back unchanged to :meth:`move` during a swim.
-
-        :param Solution solution: bacterium whose direction is generated
-        :param Random random_generator: optimizer-owned random generator
-        :return: representation-specific direction
-        :rtype: object
-        """
-        raise NotImplementedError
-
-    @abstractmethod
-    def move(
-        self,
-        solution: Solution,
-        direction: object,
-        step_size: float,
-        problem: Problem,
-    ) -> Solution:
-        """Create a moved candidate without mutating ``solution``.
-
-        Concrete strategies are responsible for representation handling and
-        domain repair, such as clipping a real vector to its bounds.
-
-        :param Solution solution: bacterium to move
-        :param object direction: direction returned by :meth:`tumble_direction`
-        :param float step_size: chemotactic step size
-        :param Problem problem: problem being optimized
-        :return: unevaluated moved candidate
-        :rtype: Solution
-        """
-        raise NotImplementedError

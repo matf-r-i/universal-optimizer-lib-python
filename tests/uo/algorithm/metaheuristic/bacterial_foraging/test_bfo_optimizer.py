@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 import unittest
 
 from uo.algorithm.metaheuristic.bacterial_foraging.bfo_movement_support import (
@@ -9,9 +9,11 @@ from uo.algorithm.metaheuristic.bacterial_foraging.bfo_optimizer import (
     BfoOptimizerConstructionParameters,
 )
 from uo.algorithm.metaheuristic.bacterial_foraging.bfo_step_size_support import (
+    BfoStepSizeSupportAdaptive,
     BfoStepSizeSupportFixed,
 )
 from uo.algorithm.metaheuristic.bacterial_foraging.bfo_swarming_support import (
+    BfoSwarmingSupport,
     BfoSwarmingSupportIdle,
 )
 from uo.algorithm.metaheuristic.finish_control import FinishControl
@@ -81,6 +83,7 @@ class LinearSolution(Solution):
 class DeterministicMovement(BfoMovementSupport):
     def __init__(self):
         self.move_calls = 0
+        self.step_sizes = []
 
     def copy(self):
         return DeterministicMovement()
@@ -90,9 +93,31 @@ class DeterministicMovement(BfoMovementSupport):
 
     def move(self, solution, direction, step_size, problem):
         self.move_calls += 1
+        self.step_sizes.append(step_size)
         candidate = solution.copy()
         candidate.init_from(solution.representation + direction * step_size, problem)
         return candidate
+
+
+class RejectingMovement(BfoMovementSupport):
+    def copy(self):
+        return RejectingMovement()
+
+    def tumble_direction(self, solution, random_generator):
+        return -1.0
+
+    def move(self, solution, direction, step_size, problem):
+        candidate = solution.copy()
+        candidate.init_from(solution.representation - step_size, problem)
+        return candidate
+
+
+class SocialBoost(BfoSwarmingSupport):
+    def copy(self):
+        return SocialBoost()
+
+    def interaction_value(self, bacterium, population):
+        return -100.0 * bacterium.representation
 
 
 class TestBfoOptimizer(unittest.TestCase):
@@ -175,6 +200,41 @@ class TestBfoOptimizer(unittest.TestCase):
         self.assertIsNotNone(optimizer.execution_started)
         self.assertIsNotNone(optimizer.execution_ended)
 
+        time_limited = self.make_optimizer(
+            finish_control=FinishControl(criteria="seconds", seconds_max=1.0),
+        )
+        time_limited.execution_started = datetime.now() - timedelta(seconds=2)
+        self.assertTrue(time_limited.should_finish())
+
+    def test_evaluation_limit_stops_during_swimming_without_overshooting(self):
+        optimizer = self.make_optimizer(
+            finish_control=FinishControl(
+                criteria="evaluations",
+                evaluations_max=6,
+            ),
+        )
+
+        optimizer.optimize()
+
+        self.assertEqual(optimizer.evaluation, 6)
+        self.assertEqual(optimizer.movement_support.move_calls, 2)
+        self.assertEqual(optimizer.iteration, 0)
+
+    def test_evaluation_limit_stops_partial_dispersal_without_counting_event(self):
+        optimizer = self.make_optimizer(
+            swim_length=0,
+            finish_control=FinishControl(
+                criteria="evaluations",
+                evaluations_max=6,
+            ),
+        )
+
+        optimizer.optimize()
+
+        self.assertEqual(optimizer.evaluation, 6)
+        self.assertEqual(optimizer.elimination_dispersal_step, 0)
+        self.assertTrue(optimizer.should_finish())
+
     def test_copy_preserves_configured_strategies_and_runtime_state(self):
         optimizer = self.make_optimizer(chemotactic_steps=1)
         optimizer.init()
@@ -193,6 +253,7 @@ class TestBfoOptimizer(unittest.TestCase):
         self.assertEqual(copied.execution_ended, optimizer.execution_ended)
         self.assertEqual(copied.time_when_best_found, optimizer.time_when_best_found)
         self.assertIsNot(copied.best_solution, optimizer.best_solution)
+        self.assertIn("bfo", str(optimizer))
 
     def test_construction_parameters_create_equivalent_optimizer(self):
         optimizer = self.make_optimizer()
@@ -239,6 +300,68 @@ class TestBfoOptimizer(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             self.make_optimizer(elimination_dispersal_probability=1.1)
+
+    def test_rejected_moves_stop_swimming_and_iteration_limit_stops_execution(self):
+        optimizer = self.make_optimizer(
+            movement_support=RejectingMovement(),
+            swim_length=2,
+            reproduction_steps=2,
+            elimination_dispersal_probability=0.0,
+            elimination_dispersal_events=3,
+            finish_control=FinishControl(criteria="iterations", iterations_max=1),
+        )
+
+        optimizer.optimize()
+
+        self.assertEqual(optimizer.evaluation, 8)
+        self.assertEqual(optimizer.iteration, 1)
+        self.assertEqual(optimizer.elimination_dispersal_step, 0)
+        self.assertEqual([b.representation for b in optimizer.current_population], [0.0] * 4)
+        self.assertEqual(optimizer.health, [0.0] * 4)
+
+    def test_optimizer_adapts_steps_during_swimming_then_resets_dispersed_bacteria(self):
+        movement = DeterministicMovement()
+        optimizer = self.make_optimizer(
+            movement_support=movement,
+            step_size_support=BfoStepSizeSupportAdaptive(
+                initial_step_size=0.5,
+                minimum_step_size=0.5,
+                maximum_step_size=1.0,
+                increase_factor=2.0,
+                decrease_factor=0.5,
+            ),
+            chemotactic_steps=1,
+            swim_length=1,
+            reproduction_steps=1,
+            elimination_dispersal_probability=1.0,
+        )
+        optimizer.init()
+
+        optimizer.main_loop_iteration()
+
+        self.assertEqual(movement.step_sizes, [0.5, 1.0] * 4)
+        self.assertEqual(optimizer.step_sizes, [0.5] * 4)
+        self.assertEqual(optimizer.evaluation, 16)
+
+    def test_social_health_does_not_replace_actual_global_best(self):
+        optimizer = self.make_optimizer(
+            movement_support=RejectingMovement(),
+            swarming_support=SocialBoost(),
+            chemotactic_steps=1,
+            swim_length=0,
+            reproduction_steps=2,
+            elimination_dispersal_probability=0.0,
+        )
+
+        optimizer.init()
+        optimizer.main_loop_iteration()
+
+        self.assertEqual(optimizer.best_solution.representation, 0.0)
+        self.assertEqual(
+            [bacterium.representation for bacterium in optimizer.current_population],
+            [-0.5] * 4,
+        )
+        self.assertEqual(optimizer.health, [49.5] * 4)
 
 
 if __name__ == "__main__":

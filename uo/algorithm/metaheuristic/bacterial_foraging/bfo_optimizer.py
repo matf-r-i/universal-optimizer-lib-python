@@ -79,7 +79,8 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
         :param BfoSwarmingSupport swarming_support: social-interaction strategy
         :param BfoStepSizeSupport step_size_support: step initialization and
             adaptation strategy
-        :param int population_size: even number of bacteria, at least two
+        :param int population_size: number of bacteria, at least two; odd
+            values are rounded up to the next even number
         :param int chemotactic_steps: chemotactic sweeps before reproduction
         :param int swim_length: maximum accepted swim moves after a tumble
         :param int reproduction_steps: reproductions before elimination
@@ -106,7 +107,7 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
         )
         self._validate_integer("population_size", population_size, minimum=2)
         if population_size % 2 != 0:
-            population_size+=1
+            population_size += 1
         self._validate_integer("chemotactic_steps", chemotactic_steps, minimum=1)
         self._validate_integer("swim_length", swim_length, minimum=0)
         self._validate_integer("reproduction_steps", reproduction_steps, minimum=1)

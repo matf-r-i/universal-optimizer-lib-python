@@ -89,7 +89,8 @@ best is kept when a live bacterium is dispersed.
   dimension.
 * ``swarming_support``: idle or distance-based social interaction strategy.
 * ``step_size_support``: fixed or adaptive chemotactic step-size strategy.
-* ``population_size``: even number of bacteria, at least two.
+* ``population_size``: number of bacteria, at least two. Odd values are
+  rounded up to the next even number because reproduction operates in pairs.
 * ``chemotactic_steps``: number of sweeps before reproduction.
 * ``swim_length``: maximum number of accepted swim moves after a tumble. It
   may be zero.

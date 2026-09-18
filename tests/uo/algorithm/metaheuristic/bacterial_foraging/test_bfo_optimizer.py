@@ -287,9 +287,14 @@ class TestBfoOptimizer(unittest.TestCase):
         self.assertIsInstance(constructed.step_size_support, BfoStepSizeSupportFixed)
         self.assertIsInstance(constructed.swarming_support, BfoSwarmingSupportIdle)
 
-    def test_constructor_rejects_invalid_population_configuration(self):
-        with self.assertRaises(ValueError):
-            self.make_optimizer(population_size=3)
+    def test_constructor_rounds_odd_population_up(self):
+        # BFO reproduction works with pairs, so odd populations are rounded
+        # up to the next even size by the optimizer constructor.
+        optimizer = self.make_optimizer(population_size=3)
+
+        self.assertEqual(optimizer.population_size, 4)
+
+    def test_constructor_rejects_population_smaller_than_two(self):
         with self.assertRaises(ValueError):
             self.make_optimizer(population_size=1)
 

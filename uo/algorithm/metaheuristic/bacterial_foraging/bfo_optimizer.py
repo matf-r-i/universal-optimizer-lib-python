@@ -106,7 +106,7 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
         )
         self._validate_integer("population_size", population_size, minimum=2)
         if population_size % 2 != 0:
-            raise ValueError("Parameter 'population_size' must be even")
+            population_size+=1
         self._validate_integer("chemotactic_steps", chemotactic_steps, minimum=1)
         self._validate_integer("swim_length", swim_length, minimum=0)
         self._validate_integer("reproduction_steps", reproduction_steps, minimum=1)

@@ -258,8 +258,9 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
         copied.__elimination_dispersal_step = self.elimination_dispersal_step
         copied.evaluation = self.evaluation
         copied.iteration = self.iteration
+        self._copy_runtime_state_to(copied)
+        copied.__random_generator.setstate(self.__random_generator.getstate())
         if self.best_solution is not None:
-            copied.best_solution = self.best_solution
             copied.evaluation_best_found = self.evaluation_best_found
             copied.iteration_best_found = self.iteration_best_found
         return copied
@@ -404,6 +405,8 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
             health = 0.0
 
             for _ in range(self.swim_length + 1):
+                if self._evaluation_limit_reached():
+                    return
                 candidate = self.movement_support.move(
                     current,
                     direction,
@@ -481,6 +484,8 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
 
     def _eliminate_and_disperse(self) -> None:
         for index, bacterium in enumerate(self.__current_population):
+            if self._evaluation_limit_reached():
+                return
             if self.__random_generator.random() >= self.elimination_dispersal_probability:
                 continue
             replacement = self.solution_template.copy()
@@ -493,6 +498,12 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
                 self.step_size_support.initial_step_size()
             )
             self._update_best_solution(replacement)
+
+    def _evaluation_limit_reached(self) -> bool:
+        return (
+            self.finish_control.check_evaluations
+            and self.evaluation >= self.finish_control.evaluations_max
+        )
 
     @staticmethod
     def _validated_step_size(value: object) -> float:

@@ -91,8 +91,11 @@ class PopulationBasedMetaheuristic(Metaheuristic, metaclass=ABCMeta):
         
         :param Optional[list[Solution]] value: the current population within single solution metaheuristic execution
         """
-        if not isinstance(value, Solution) and value is not None:
-            raise TypeError('Parameter \'current_population\' must have type \'list[Solution]\' or be None.')
+        if value is not None:
+            if not isinstance(value, list):
+                raise TypeError('Parameter \'current_population\' must have type \'list[Solution]\' or be None.')
+            if any(not isinstance(solution, Solution) for solution in value):
+                raise TypeError('Every item in \'current_population\' must have type \'Solution\'.')
         self.__current_population = value
 
     def string_rep(self, delimiter:str, indentation:int=0, indentation_symbol:str='', group_start:str ='{', 
@@ -121,7 +124,7 @@ class PopulationBasedMetaheuristic(Metaheuristic, metaclass=ABCMeta):
         s += delimiter
         for _ in range(0, indentation):
             s += indentation_symbol  
-        s += 'current_solutions=' + str(self.current_solutions) + delimiter
+        s += 'current_population=' + str(self.current_population) + delimiter
         for _ in range(0, indentation):
             s += indentation_symbol  
         s += group_end 

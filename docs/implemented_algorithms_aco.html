@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ant Colony Optimization &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Universal optimization library" href="modules.html" />
+    <link rel="prev" title="MOEA/D" href="implemented_algorithms_moead.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Optimization Algorithms Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="implemented_algorithms_bayesian_optimization.html">Bayesian Optimization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="implemented_algorithms_exact.html">Implemented exact algorithms</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_variable_neighborhood_search.html">Variable Neighborhood Search</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_genetic_algorithm.html">Genetic Algorithm</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_simulated_annealing.html">Simulated Annealing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maml_metaheuristic.html">MAML Metaheuristic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="implemented_algorithms_moead.html">MOEA/D</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Ant Colony Optimization</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#basic-information">Basic information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#implementation-notes">Implementation notes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters-and-limitations">Parameters and limitations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api-reference">API reference</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Program code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Universal optimization library</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html#contributors">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Optimization Algorithms Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="implemented_algorithms.html">Implemented algorithms</a></li>
+          <li class="breadcrumb-item"><a href="implemented_algorithms_metaheuristic.html">Implemented metaheuristic algorithms</a></li>
+      <li class="breadcrumb-item active">Ant Colony Optimization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/implemented_algorithms_aco.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ant-colony-optimization">
+<span id="algorithm-ant-colony-optimization"></span><h1>Ant Colony Optimization<a class="headerlink" href="#ant-colony-optimization" title="Link to this heading"></a></h1>
+<section id="basic-information">
+<h2>Basic information<a class="headerlink" href="#basic-information" title="Link to this heading"></a></h2>
+<p>Ant Colony Optimization (ACO) is a population-based metaheuristic inspired
+by ant foraging behavior. Ants construct candidate solutions step by step,
+guided by pheromone trails and a problem-specific heuristic. Trails on
+better solutions are reinforced; all trails evaporate over time, keeping
+the colony exploring.</p>
+<p>This implementation is the MMAS (Max-Min Ant System) variant, which bounds
+pheromone values within <code class="docutils literal notranslate"><span class="pre">[tau_min,</span> <span class="pre">tau_max]</span></code> to prevent premature
+convergence and starvation.</p>
+</section>
+<section id="implementation-notes">
+<h2>Implementation notes<a class="headerlink" href="#implementation-notes" title="Link to this heading"></a></h2>
+<p>The implementation is provided by
+<a class="reference internal" href="uo.algorithm.metaheuristic.aco.html#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer" title="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizer</span></code></a>, which
+holds the shared pheromone/heuristic state, and its concrete subclass
+<a class="reference internal" href="uo.algorithm.metaheuristic.aco.html#uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard" title="uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizerStandard</span></code></a>,
+which implements the main loop.</p>
+<p>Solution construction and local search are problem-specific and are provided
+by implementations of
+<a class="reference internal" href="uo.algorithm.metaheuristic.aco.html#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoConstructionSupport</span></code></a>.
+Pheromone evaporation, deposit and clamping are provided by implementations
+of <a class="reference internal" href="uo.algorithm.metaheuristic.aco.html#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupport</span></code></a>;
+two strategies are available:
+<a class="reference internal" href="uo.algorithm.metaheuristic.aco.html#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupportFixed</span></code></a>
+(deterministic control, deposit source switches at a fixed iteration count)
+and
+<a class="reference internal" href="uo.algorithm.metaheuristic.aco.html#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupportAdaptive</span></code></a>
+(adaptive control, evaporation rate and deposit source react to the search’s
+stagnation counter).</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">optimizer</span> <span class="o">=</span> <span class="n">AcoOptimizerStandard</span><span class="p">(</span>
+    <span class="n">construction_support</span><span class="o">=</span><span class="n">construction_support</span><span class="p">,</span>
+    <span class="n">evaporation_support</span><span class="o">=</span><span class="n">AcoEvaporationSupportAdaptive</span><span class="p">(</span><span class="n">rho_scale</span><span class="o">=</span><span class="mf">2.0</span><span class="p">),</span>
+    <span class="n">n_ants</span><span class="o">=</span><span class="n">problem</span><span class="o">.</span><span class="n">n</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="n">beta</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span>
+    <span class="n">rho</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span>
+    <span class="n">p_best</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+    <span class="n">stagnation_limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+    <span class="n">finish_control</span><span class="o">=</span><span class="n">FinishControl</span><span class="p">(</span><span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;iterations&quot;</span><span class="p">,</span> <span class="n">iterations_max</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span>
+    <span class="n">problem</span><span class="o">=</span><span class="n">problem</span><span class="p">,</span>
+    <span class="n">solution_template</span><span class="o">=</span><span class="n">solution</span><span class="p">,</span>
+    <span class="n">output_control</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">43434343</span><span class="p">,</span>
+    <span class="n">additional_statistics_control</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">best_solution</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="parameters-and-limitations">
+<h2>Parameters and limitations<a class="headerlink" href="#parameters-and-limitations" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">alpha</span></code> and <code class="docutils literal notranslate"><span class="pre">beta</span></code> control the relative influence of pheromone versus
+heuristic desirability during construction. <code class="docutils literal notranslate"><span class="pre">rho</span></code> is the base evaporation
+rate. <code class="docutils literal notranslate"><span class="pre">p_best</span></code> derives the MMAS pheromone lower bound; it requires
+<code class="docutils literal notranslate"><span class="pre">p_best</span> <span class="pre">**</span> <span class="pre">(1</span> <span class="pre">/</span> <span class="pre">n)</span> <span class="pre">&gt;=</span> <span class="pre">2</span> <span class="pre">/</span> <span class="pre">n</span></code> to keep <code class="docutils literal notranslate"><span class="pre">tau_min</span> <span class="pre">&lt;=</span> <span class="pre">tau_max</span></code>, which holds
+for every problem instance of realistic size but can fail for very small
+<code class="docutils literal notranslate"><span class="pre">n</span></code>. <code class="docutils literal notranslate"><span class="pre">stagnation_limit</span></code> controls both the adaptive evaporation strategy
+and the hard pheromone reset. The current implementation targets
+permutation-based construction (a <code class="docutils literal notranslate"><span class="pre">representation.tour</span></code> and a
+<code class="docutils literal notranslate"><span class="pre">tour_cost</span></code> method are expected on the solution) and does not support
+multi-objective problems.</p>
+</section>
+<section id="api-reference">
+<h2>API reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="uo.algorithm.metaheuristic.aco.html"><span class="doc">uo.algorithm.metaheuristic.aco package</span></a>.</p>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Link to this heading"></a></h2>
+<div role="list" class="citation-list">
+<div class="citation" id="dorigostutzle2004" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>DorigoStutzle2004<span class="fn-bracket">]</span></span>
+<p>Dorigo, M.; Stützle, T. (2004). “Ant Colony Optimization”. MIT Press.</p>
+</div>
+<div class="citation" id="stutzlehoos2000" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>StutzleHoos2000<span class="fn-bracket">]</span></span>
+<p>Stützle, T.; Hoos, H. H. (2000). “MAX-MIN Ant System”. Future Generation Computer Systems. 16 (8): 889-914.</p>
+</div>
+<div class="citation" id="mavrovouniotis2014" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span>Mavrovouniotis2014<span class="fn-bracket">]</span></span>
+<p>Mavrovouniotis, M.; Yang, S. (2014). “Ant Colony Optimization with Self-Adaptive Evaporation Rate in Dynamic Environments”. IEEE Symposium Series on Computational Intelligence.</p>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="implemented_algorithms_moead.html" class="btn btn-neutral float-left" title="MOEA/D" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="modules.html" class="btn btn-neutral float-right" title="Universal optimization library" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Vladimir Filipovic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

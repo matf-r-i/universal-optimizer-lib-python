@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uo.algorithm.metaheuristic.aco package &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="uo.problem package" href="uo.problem.html" />
+    <link rel="prev" title="uo.algorithm.metaheuristic.moead package" href="uo.algorithm.metaheuristic.moead.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Optimization Algorithms Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Program code</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Universal optimization library</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="uo.html">uo package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="uo.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="uo.algorithm.html">uo.algorithm package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.problem.html">uo.problem package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.solution.html">uo.solution package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="uo.utils.html">uo.utils package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="uo.html#module-uo">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html#contributors">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Optimization Algorithms Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Universal optimization library</a></li>
+          <li class="breadcrumb-item"><a href="uo.html">uo package</a></li>
+          <li class="breadcrumb-item"><a href="uo.algorithm.html">uo.algorithm package</a></li>
+          <li class="breadcrumb-item"><a href="uo.algorithm.metaheuristic.html">uo.algorithm.metaheuristic package</a></li>
+      <li class="breadcrumb-item active">uo.algorithm.metaheuristic.aco package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/uo.algorithm.metaheuristic.aco.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uo-algorithm-metaheuristic-aco-package">
+<h1>uo.algorithm.metaheuristic.aco package<a class="headerlink" href="#uo-algorithm-metaheuristic-aco-package" title="Link to this heading"></a></h1>
+<section id="module-uo.algorithm.metaheuristic.aco.aco_optimizer">
+<span id="optimizer"></span><h2>Optimizer<a class="headerlink" href="#module-uo.algorithm.metaheuristic.aco.aco_optimizer" title="Link to this heading"></a></h2>
+<dl class="py class" id="py-aco-optimizer">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.aco.aco_optimizer.</span></span><span class="sig-name descname"><span class="pre">AcoOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">construction_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><span class="pre">AcoConstructionSupport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaporation_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><span class="pre">AcoEvaporationSupport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_ants</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_best</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">stagnation_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FinishControl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_statistics_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic" title="uo.algorithm.metaheuristic.population_based_metaheuristic.PopulationBasedMetaheuristic"><code class="xref py py-class docutils literal notranslate"><span class="pre">PopulationBasedMetaheuristic</span></code></a></p>
+<p>Instance of the class <code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizer</span></code> encapsulates
+Ant Colony Optimization (MMAS variant) optimization algorithm.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.alpha">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alpha</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.alpha" title="Link to this definition"></a></dt>
+<dd><p>Property getter for pheromone influence parameter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.beta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">beta</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.beta" title="Link to this definition"></a></dt>
+<dd><p>Property getter for heuristic influence parameter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.construction_support">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">construction_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><span class="pre">AcoConstructionSupport</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.construction_support" title="Link to this definition"></a></dt>
+<dd><p>Property getter for construction support.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.copy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer" title="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizer</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.eta">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">eta</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.eta" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the heuristic desirability matrix.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.evaporation_support">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">evaporation_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><span class="pre">AcoEvaporationSupport</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.evaporation_support" title="Link to this definition"></a></dt>
+<dd><p>Property getter for evaporation support.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.init" title="Link to this definition"></a></dt>
+<dd><p>Initialization of the ACO algorithm.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.main_loop_iteration">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">main_loop_iteration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.main_loop_iteration" title="Link to this definition"></a></dt>
+<dd><p>One iteration within main loop of the ACO algorithm</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.n_ants">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_ants</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.n_ants" title="Link to this definition"></a></dt>
+<dd><p>Property getter for number of ants.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.p_best">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">p_best</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.p_best" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the MMAS lower-bound parameter.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.rho">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rho</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.rho" title="Link to this definition"></a></dt>
+<dd><p>Property getter for base evaporation rate.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.stagnation_count">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stagnation_count</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.stagnation_count" title="Link to this definition"></a></dt>
+<dd><p>Property getter for stagnation count.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.stagnation_limit">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">stagnation_limit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.stagnation_limit" title="Link to this definition"></a></dt>
+<dd><p>Property getter for stagnation limit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the <cite>AcoOptimizer</cite> instance.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.tau">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tau</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.tau" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the pheromone matrix.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.tau_max">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tau_max</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.tau_max" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the pheromone upper bound.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.tau_min">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tau_min</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.tau_min" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the pheromone lower bound.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.update_tau_bounds">
+<span class="sig-name descname"><span class="pre">update_tau_bounds</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">best_tour_cost</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer.update_tau_bounds" title="Link to this definition"></a></dt>
+<dd><p>Update the MMAS pheromone bounds from the given best tour cost.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.aco.aco_optimizer.</span></span><span class="sig-name descname"><span class="pre">AcoOptimizerConstructionParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">construction_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><span class="pre">AcoConstructionSupport</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaporation_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><span class="pre">AcoEvaporationSupport</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_ants</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.02</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_best</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stagnation_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FinishControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_statistics_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Instance of the class <code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizerConstructionParameters</span></code>
+represents constructor parameters for the ACO algorithm.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.additional_statistics_control">
+<span class="sig-name descname"><span class="pre">additional_statistics_control</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.additional_statistics_control" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">1.0</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.alpha" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.beta">
+<span class="sig-name descname"><span class="pre">beta</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">2.0</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.beta" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.construction_support">
+<span class="sig-name descname"><span class="pre">construction_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><span class="pre">AcoConstructionSupport</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.construction_support" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.evaporation_support">
+<span class="sig-name descname"><span class="pre">evaporation_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><span class="pre">AcoEvaporationSupport</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.evaporation_support" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.finish_control">
+<span class="sig-name descname"><span class="pre">finish_control</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FinishControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.finish_control" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.n_ants">
+<span class="sig-name descname"><span class="pre">n_ants</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.n_ants" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.output_control">
+<span class="sig-name descname"><span class="pre">output_control</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.output_control" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.p_best">
+<span class="sig-name descname"><span class="pre">p_best</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.05</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.p_best" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.problem">
+<span class="sig-name descname"><span class="pre">problem</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.problem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.random_seed">
+<span class="sig-name descname"><span class="pre">random_seed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.random_seed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.rho">
+<span class="sig-name descname"><span class="pre">rho</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.02</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.rho" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.solution_template">
+<span class="sig-name descname"><span class="pre">solution_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.solution_template" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.stagnation_limit">
+<span class="sig-name descname"><span class="pre">stagnation_limit</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters.stagnation_limit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class" id="py-aco-optimizer-standard">
+<span id="module-uo.algorithm.metaheuristic.aco.aco_optimizer_standard"></span><dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.aco.aco_optimizer_standard.</span></span><span class="sig-name descname"><span class="pre">AcoOptimizerStandard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">construction_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><span class="pre">AcoConstructionSupport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">evaporation_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><span class="pre">AcoEvaporationSupport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_ants</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_best</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">stagnation_limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FinishControl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_statistics_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer" title="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizer</span></code></a></p>
+<p>Instance of the class <code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizerStandard</span></code> encapsulates
+Ant Colony Optimization (MMAS variant) optimization algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard" title="uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard"><span class="pre">AcoOptimizerStandard</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard.copy" title="Link to this definition"></a></dt>
+<dd><p>Internal copy of the current instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance of class <code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizerStandard</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard.from_construction_tuple">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_construction_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">construction_tuple</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters" title="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters"><span class="pre">AcoOptimizerConstructionParameters</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard" title="uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard"><span class="pre">AcoOptimizerStandard</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard.from_construction_tuple" title="Link to this definition"></a></dt>
+<dd><p>Additional constructor, that creates new instance of class
+<code class="xref py py-class docutils literal notranslate"><span class="pre">AcoOptimizerStandard</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>construction_tuple</strong> (<a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters" title="uo.algorithm.metaheuristic.aco.aco_optimizer.AcoOptimizerConstructionParameters"><em>AcoOptimizerConstructionParameters</em></a>) – tuple with all constructor parameters</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard.main_loop_iteration">
+<span class="sig-name descname"><span class="pre">main_loop_iteration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_optimizer_standard.AcoOptimizerStandard.main_loop_iteration" title="Link to this definition"></a></dt>
+<dd><p>One iteration within main loop of the ACO algorithm.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.aco.aco_construction_support">
+<span id="construction-support"></span><h2>Construction support<a class="headerlink" href="#module-uo.algorithm.metaheuristic.aco.aco_construction_support" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.aco.aco_construction_support" title="uo.algorithm.metaheuristic.aco.aco_construction_support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">aco_construction_support</span></code></a> module describes the class
+<a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoConstructionSupport</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.aco.aco_construction_support.</span></span><span class="sig-name descname"><span class="pre">AcoConstructionSupport</span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Placeholder for additional methods, specific for ACO solution construction
+and local search, which depend on the precise problem and solution type.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport.construct">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">construct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport.construct" title="Link to this definition"></a></dt>
+<dd><p>Build one ant’s candidate solution in place, using the optimizer’s
+pheromone (<cite>tau</cite>) and heuristic (<cite>eta</cite>) matrices.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem</strong> (<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><em>Problem</em></a>) – problem that is being solved</p></li>
+<li><p><strong>solution</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a>) – solution instance to construct into</p></li>
+<li><p><strong>optimizer</strong> – ACO optimizer executing the construction</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport.copy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport" title="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoConstructionSupport</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport.local_search">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">local_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_construction_support.AcoConstructionSupport.local_search" title="Link to this definition"></a></dt>
+<dd><p>Refine a solution in place. Called only on the iteration-best ant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem</strong> (<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><em>Problem</em></a>) – problem that is being solved</p></li>
+<li><p><strong>solution</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a>) – solution instance to refine</p></li>
+<li><p><strong>optimizer</strong> – ACO optimizer executing the local search</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.aco.aco_evaporation_support">
+<span id="evaporation-support"></span><h2>Evaporation support<a class="headerlink" href="#module-uo.algorithm.metaheuristic.aco.aco_evaporation_support" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.aco.aco_evaporation_support" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">aco_evaporation_support</span></code></a> module describes the classes
+<a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupport</span></code></a>,
+<a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupportFixed</span></code></a> and
+<a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupportAdaptive</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.aco.aco_evaporation_support.</span></span><span class="sig-name descname"><span class="pre">AcoEvaporationSupport</span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Placeholder for pheromone evaporation, deposit and clamping behavior,
+executed once per iteration of the ACO algorithm.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport.apply">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration_best_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_best_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport.apply" title="Link to this definition"></a></dt>
+<dd><p>Evaporate pheromone on all edges, deposit along the chosen tour,
+then clamp all values to <cite>[tau_min, tau_max]</cite>. Mutates
+<cite>optimizer.tau</cite> in place.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>optimizer</strong> – ACO optimizer executing the current iteration</p></li>
+<li><p><strong>iteration_best_solution</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a>) – best solution found in the current iteration</p></li>
+<li><p><strong>global_best_solution</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a>) – best solution found so far, across all iterations</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport.copy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupport</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.aco.aco_evaporation_support.</span></span><span class="sig-name descname"><span class="pre">AcoEvaporationSupportAdaptive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho_scale</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupport</span></code></a></p>
+<p>Adaptive parameter control: the evaporation rate and the pheromone
+deposit source both react to the search’s stagnation counter instead
+of a fixed iteration threshold.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration_best_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_best_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive.apply" title="Link to this definition"></a></dt>
+<dd><p>Evaporate at a rate that grows with the stagnation counter; deposit
+source switches to global-best once stagnation crosses 50% of the
+stagnation limit.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive"><span class="pre">AcoEvaporationSupportAdaptive</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportAdaptive.copy" title="Link to this definition"></a></dt>
+<dd><p>Internal copy of the current instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance of class <code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupportAdaptive</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.aco.aco_evaporation_support.</span></span><span class="sig-name descname"><span class="pre">AcoEvaporationSupportFixed</span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupport</span></code></a></p>
+<p>Deterministic parameter control (baseline): the pheromone deposit source
+switches from iteration-best to global-best at a fixed iteration count
+(50% of the maximum number of iterations); the evaporation rate never
+changes.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed.apply">
+<span class="sig-name descname"><span class="pre">apply</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">optimizer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iteration_best_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">global_best_solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed.apply" title="Link to this definition"></a></dt>
+<dd><p>Evaporate at a constant rate; deposit source switches from
+iteration-best to global-best at a fixed iteration count.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed" title="uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed"><span class="pre">AcoEvaporationSupportFixed</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.aco.aco_evaporation_support.AcoEvaporationSupportFixed.copy" title="Link to this definition"></a></dt>
+<dd><p>Internal copy of the current instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance of class <code class="xref py py-class docutils literal notranslate"><span class="pre">AcoEvaporationSupportFixed</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="uo.algorithm.metaheuristic.moead.html" class="btn btn-neutral float-left" title="uo.algorithm.metaheuristic.moead package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="uo.problem.html" class="btn btn-neutral float-right" title="uo.problem package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Vladimir Filipovic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

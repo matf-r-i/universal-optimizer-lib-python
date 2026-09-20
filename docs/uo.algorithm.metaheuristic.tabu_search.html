@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>uo.algorithm.metaheuristic.tabu_search package &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Optimization Algorithms Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Program code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Universal optimization library</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html#contributors">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Optimization Algorithms Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">uo.algorithm.metaheuristic.tabu_search package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/uo.algorithm.metaheuristic.tabu_search.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uo-algorithm-metaheuristic-tabu-search-package">
+<h1>uo.algorithm.metaheuristic.tabu_search package<a class="headerlink" href="#uo-algorithm-metaheuristic-tabu-search-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-uo.algorithm.metaheuristic.tabu_search.tabu_list">
+<span id="uo-algorithm-metaheuristic-tabu-search-tabu-list-module"></span><h2>uo.algorithm.metaheuristic.tabu_search.tabu_list module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_list" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_list" title="uo.algorithm.metaheuristic.tabu_search.tabu_list"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabu_list</span></code></a> module describes the class <a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList" title="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList"><code class="xref py py-class docutils literal notranslate"><span class="pre">TabuList</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.tabu_search.tabu_list.</span></span><span class="sig-name descname"><span class="pre">TabuList</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>This class represents short-term memory structure used by Tabu Search metaheuristic.
+It keeps track of the most recently applied moves (or solution codes), forbidding them
+from being repeated until they age out of the list.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">move</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.14)"><span class="pre">Hashable</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.add" title="Link to this definition"></a></dt>
+<dd><p>Add the supplied move to the tabu list. If tabu list is full, the oldest move is
+discarded to make room for the new one.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>move</strong> (<em>Hashable</em>) – move to be added to the tabu list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.contains">
+<span class="sig-name descname"><span class="pre">contains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">move</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.14)"><span class="pre">Hashable</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.contains" title="Link to this definition"></a></dt>
+<dd><p>Check if the supplied move is currently forbidden (tabu)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>move</strong> (<em>Hashable</em>) – move to be checked</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>True</cite> if move is tabu, <cite>False</cite> otherwise</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList" title="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList"><span class="pre">TabuList</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current <cite>TabuList</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new <cite>TabuList</cite> instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>TabuList</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the <cite>TabuList</cite> instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delimiter</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – delimiter between fields</p></li>
+<li><p><strong>indentation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em><em>, </em><em>default value 0</em>) – level of indentation</p></li>
+<li><p><strong>indentation_symbol</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value ''</em>) – indentation symbol</p></li>
+<li><p><strong>group_start</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '{'</em>) – group start string</p></li>
+<li><p><strong>group_end</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '}'</em>) – group end string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of the <cite>TabuList</cite> instance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.tenure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tenure</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList.tenure" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the tenure (maximum size) of the tabu list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tenure of the tabu list</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer">
+<span id="uo-algorithm-metaheuristic-tabu-search-tabu-search-optimizer-module"></span><h2>uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer" title="Link to this heading"></a></h2>
+<p id="py-tabu-search-optimizer">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabu_search_optimizer</span></code></a> contains class
+<a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TabuSearchOptimizer</span></code></a>, that implements
+<span class="xref std std-ref">Tabu Search</span> algorithm.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.</span></span><span class="sig-name descname"><span class="pre">TabuSearchOptimizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tabu_search_support</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport"><span class="pre">TabuSearchSupport</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">tabu_tenure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">finish_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FinishControl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_statistics_control</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic" title="uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic"><code class="xref py py-class docutils literal notranslate"><span class="pre">SingleSolutionMetaheuristic</span></code></a></p>
+<p>Instance of the class <a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">TabuSearchOptimizer</span></code></a>
+encapsulates <span class="xref std std-ref">Algorithm_Tabu_Search</span> optimization algorithm.</p>
+<p>Tabu Search is a single-solution, neighborhood-based metaheuristic. At each iteration it moves to the
+best neighbor of the current solution that is not forbidden by the tabu list – a short-term memory of
+recently applied moves – unless that neighbor is better than the best solution found so far, in which
+case it is accepted regardless of the tabu status (aspiration criterion). Allowing temporarily
+non-improving moves lets the search escape local optima without random perturbation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the <cite>TabuSearchOptimizer</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new <cite>TabuSearchOptimizer</cite> instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>TabuSearchOptimizer</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.from_construction_tuple">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_construction_tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">construction_tuple</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters"><span class="pre">TabuSearchOptimizerConstructionParameters</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.from_construction_tuple" title="Link to this definition"></a></dt>
+<dd><p>Additional constructor, that creates new instance of class <code class="xref py py-class docutils literal notranslate"><span class="pre">TabuSearchOptimizer</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>construction_tuple</strong> (<a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters"><em>TabuSearchOptimizerConstructionParameters</em></a>) – tuple with all constructor</p>
+</dd>
+</dl>
+<p>parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.init" title="Link to this definition"></a></dt>
+<dd><p>Initialization of the Tabu Search algorithm</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.main_loop_iteration">
+<span class="sig-name descname"><span class="pre">main_loop_iteration</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.main_loop_iteration" title="Link to this definition"></a></dt>
+<dd><p>One iteration within main loop of the Tabu Search algorithm</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the <cite>TabuSearchOptimizer</cite> instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delimiter</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – delimiter between fields</p></li>
+<li><p><strong>indentation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em><em>, </em><em>default value 0</em>) – level of indentation</p></li>
+<li><p><strong>indentation_symbol</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value ''</em>) – indentation symbol</p></li>
+<li><p><strong>group_start</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '{'</em>) – group start string</p></li>
+<li><p><strong>group_end</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '}'</em>) – group end string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of instance that controls output</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.tabu_list">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tabu_list</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList" title="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList"><span class="pre">TabuList</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.tabu_list" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the tabu list used during Tabu Search execution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tabu list used during execution, or <cite>None</cite> before initialization</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>Optional[TabuList]</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.tabu_search_support">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tabu_search_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport"><span class="pre">TabuSearchSupport</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.tabu_search_support" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the neighborhood exploration support used by Tabu Search</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>neighborhood exploration support used by Tabu Search</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>TabuSearchSupport</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.tabu_tenure">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">tabu_tenure</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizer.tabu_tenure" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the tabu tenure parameter of the Tabu Search algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tabu tenure parameter</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.</span></span><span class="sig-name descname"><span class="pre">TabuSearchOptimizerConstructionParameters</span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/builtins/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Instance of the class <code class="xref py py-class docutils literal notranslate">
+<span class="pre">TabuSearchOptimizerConstructionParameters</span></code> represents constructor parameters for Tabu Search algorithm.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.additional_statistics_control">
+<span class="sig-name descname"><span class="pre">additional_statistics_control</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">AdditionalStatisticsControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.additional_statistics_control" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.finish_control">
+<span class="sig-name descname"><span class="pre">finish_control</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">FinishControl</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.finish_control" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.output_control">
+<span class="sig-name descname"><span class="pre">output_control</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.algorithm.html#uo.algorithm.output_control.OutputControl" title="uo.algorithm.output_control.OutputControl"><span class="pre">OutputControl</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.output_control" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.problem">
+<span class="sig-name descname"><span class="pre">problem</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.problem" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.random_seed">
+<span class="sig-name descname"><span class="pre">random_seed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.random_seed" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.solution_template">
+<span class="sig-name descname"><span class="pre">solution_template</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.solution_template" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.tabu_search_support">
+<span class="sig-name descname"><span class="pre">tabu_search_support</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport"><span class="pre">TabuSearchSupport</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.tabu_search_support" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.tabu_tenure">
+<span class="sig-name descname"><span class="pre">tabu_tenure</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_optimizer.TabuSearchOptimizerConstructionParameters.tabu_tenure" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.tabu_search.tabu_search_support">
+<span id="uo-algorithm-metaheuristic-tabu-search-tabu-search-support-module"></span><h2>uo.algorithm.metaheuristic.tabu_search.tabu_search_support module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_search_support" title="Link to this heading"></a></h2>
+<p>The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_search_support" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabu_search_support</span></code></a> module describes the class <a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">TabuSearchSupport</span></code></a>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.tabu_search.tabu_search_support.</span></span><span class="sig-name descname"><span class="pre">TabuSearchSupport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Generic" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code></a>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">R_co</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<p>This class represents placeholder for the neighborhood exploration used during execution of the
+Tabu Search metaheuristic. Concrete subclasses implement neighborhood generation and evaluation
+for a specific solution representation.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.best_neighbor_move">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">best_neighbor_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><span class="pre">R_co</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tabu_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList" title="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList"><span class="pre">TabuList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic" title="uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic"><span class="pre">SingleSolutionMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.14)"><span class="pre">Hashable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.best_neighbor_move" title="Link to this definition"></a></dt>
+<dd><p>Explores the neighborhood of the supplied solution, and moves it (in place) to the best
+admissible neighbor – the best neighbor that is not currently tabu, unless a non-tabu-listed
+neighbor is strictly better than the best solution found so far (aspiration criterion).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem</strong> (<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><em>Problem</em></a>) – problem that is solved</p></li>
+<li><p><strong>solution</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a>) – solution used for the problem that is solved – moved in place to</p></li>
+</ul>
+</dd>
+</dl>
+<p>the chosen neighbor, if any admissible neighbor exists
+:param <cite>TabuList</cite> tabu_list: structure that keeps track of currently forbidden moves
+:param <cite>SingleSolutionMetaheuristic</cite> optimizer: metaheuristic optimizer that is executed
+:return: move that was applied to reach the chosen neighbor, or <cite>None</cite> if no admissible
+neighbor could be found (e.g. execution should finish, or every neighbor is tabu)
+:rtype: <cite>Optional[Hashable]</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.copy">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the current object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">TabuSearchSupport</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.dimension">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dimension</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></em><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.dimension" title="Link to this definition"></a></dt>
+<dd><p>Property getter for the dimension of the solution representation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dimension of the solution representation</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)">int</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the <cite>TabuSearchSupport</cite> instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delimiter</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – delimiter between fields</p></li>
+<li><p><strong>indentation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em><em>, </em><em>default value 0</em>) – level of indentation</p></li>
+<li><p><strong>indentation_symbol</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value ''</em>) – indentation symbol</p></li>
+<li><p><strong>group_start</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '{'</em>) – group start string</p></li>
+<li><p><strong>group_end</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '}'</em>) – group end string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of the <cite>TabuSearchSupport</cite> instance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation">
+<span id="uo-algorithm-metaheuristic-tabu-search-tabu-search-support-standard-permutation-module"></span><h2>uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation module<a class="headerlink" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation" title="Link to this heading"></a></h2>
+<p id="py-tabu-search-support-standard-permutation">The <a class="reference internal" href="#module-uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">tabu_search_support_standard_permutation</span></code></a> contains class
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TabuSearchSupportStandardPermutation</span></code>, that represents Tabu
+Search neighborhood exploration support, where permutation (<cite>list[int]</cite>) representation of the problem has
+been used.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.</span></span><span class="sig-name descname"><span class="pre">TabuSearchSupportStandardPermutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support.TabuSearchSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">TabuSearchSupport</span></code></a>[<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>[<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>], <code class="xref py py-obj docutils literal notranslate"><span class="pre">A_co</span></code>]</p>
+<p>Standard Tabu Search neighborhood exploration support for solutions with permutation (<cite>list[int]</cite>)
+representation. Neighborhood is defined by swapping two positions within the permutation – for a
+permutation of length <cite>n</cite>, there are <cite>n * (n - 1) / 2</cite> such neighbors.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation.best_neighbor_move">
+<span class="sig-name descname"><span class="pre">best_neighbor_move</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><span class="pre">Problem</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">solution</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><span class="pre">Solution</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#list" title="(in Python v3.14)"><span class="pre">list</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">A_co</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tabu_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList" title="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList"><span class="pre">TabuList</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic" title="uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic"><span class="pre">SingleSolutionMetaheuristic</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Hashable" title="(in Python v3.14)"><span class="pre">Hashable</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/builtins/constants.html#None" title="(in Python v3.14)"><span class="pre">None</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation.best_neighbor_move" title="Link to this definition"></a></dt>
+<dd><p>Explores the swap-neighborhood of the supplied permutation solution, and moves it (in place) to
+the best admissible neighbor – the best neighbor whose swap is not currently tabu, unless a
+tabu neighbor is strictly better than the best solution found so far (aspiration criterion).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem</strong> (<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><em>Problem</em></a>) – problem that is solved</p></li>
+<li><p><strong>solution</strong> (<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><em>Solution</em></a>) – permutation solution used for the problem that is solved</p></li>
+<li><p><strong>tabu_list</strong> (<a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList" title="uo.algorithm.metaheuristic.tabu_search.tabu_list.TabuList"><em>TabuList</em></a>) – structure that keeps track of currently forbidden swaps</p></li>
+<li><p><strong>optimizer</strong> (<a class="reference internal" href="uo.algorithm.metaheuristic.html#uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic" title="uo.algorithm.metaheuristic.single_solution_metaheuristic.SingleSolutionMetaheuristic"><em>SingleSolutionMetaheuristic</em></a>) – metaheuristic optimizer that is executed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>(i, j)</cite> positions swapped to reach the chosen neighbor, or <cite>None</cite> if no admissible</p>
+</dd>
+</dl>
+<p>neighbor could be found
+:rtype: <cite>Optional[tuple[int, int]]</cite></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation.copy">
+<span class="sig-name descname"><span class="pre">copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation" title="uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation"><span class="pre">TabuSearchSupportStandardPermutation</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation.copy" title="Link to this definition"></a></dt>
+<dd><p>Copy the <cite>TabuSearchSupportStandardPermutation</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>new <cite>TabuSearchSupportStandardPermutation</cite> instance with the same properties</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>TabuSearchSupportStandardPermutation</cite></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation.string_rep">
+<span class="sig-name descname"><span class="pre">string_rep</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delimiter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><span class="pre">int</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">indentation_symbol</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'{'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_end</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'}'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#uo.algorithm.metaheuristic.tabu_search.tabu_search_support_standard_permutation.TabuSearchSupportStandardPermutation.string_rep" title="Link to this definition"></a></dt>
+<dd><p>String representation of the tabu search support instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>delimiter</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – delimiter between fields</p></li>
+<li><p><strong>indentation</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/functions.html#int" title="(in Python v3.14)"><em>int</em></a><em>, </em><em>optional</em><em>, </em><em>default value 0</em>) – level of indentation</p></li>
+<li><p><strong>indentation_symbol</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value ''</em>) – indentation symbol</p></li>
+<li><p><strong>group_start</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '{'</em>) – group start string</p></li>
+<li><p><strong>group_end</strong> (<a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><em>optional</em><em>, </em><em>default value '}'</em>) – group end string</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>string representation of tabu search support instance</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/builtins/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-uo.algorithm.metaheuristic.tabu_search">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-uo.algorithm.metaheuristic.tabu_search" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Vladimir Filipovic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

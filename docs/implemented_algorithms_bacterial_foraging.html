@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bacterial Foraging Optimization &mdash; Optimization Algorithms Library 0.1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=01f34227"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Optimization Algorithms Library
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Tutorials and How-To Guides</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="how_to_guides.html">How-to Guides</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Implemented algorithms</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="implemented_algorithms.html">Implemented algorithms</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Program code</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Universal optimization library</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Changelog and Contribution</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contribution.html#contributors">Contributors</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Optimization Algorithms Library</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Bacterial Foraging Optimization</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/implemented_algorithms_bacterial_foraging.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bacterial-foraging-optimization">
+<span id="algorithm-bacterial-foraging-optimization"></span><h1>Bacterial Foraging Optimization<a class="headerlink" href="#bacterial-foraging-optimization" title="Link to this heading"></a></h1>
+<section id="basic-information">
+<h2>Basic information<a class="headerlink" href="#basic-information" title="Link to this heading"></a></h2>
+<p>Bacterial Foraging Optimization (BFO) is a population-based metaheuristic for
+single-objective continuous optimization. It models a group of bacteria that
+move through the search space. A bacterium tumbles in a random direction and
+continues swimming in that direction while the effective fitness improves.
+After a number of <cite>chemotactic sweeps</cite> (tumbling of bacteria, in biology due to chemical signal),
+the population is reproduced and some
+bacteria may be eliminated and dispersed to new random positions.</p>
+<p>The optimizer follows the library convention that larger fitness values are
+better. Social interaction contributes to a temporary effective fitness used
+for movement and health calculations, it does not change a solution’s stored
+objective or fitness value. The optimizer keeps the best evaluated solution
+separately from the live population, so dispersal cannot remove the result
+already found.</p>
+</section>
+<section id="implementation-notes">
+<h2>Implementation notes<a class="headerlink" href="#implementation-notes" title="Link to this heading"></a></h2>
+<p>The main implementation is
+<a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoOptimizer" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoOptimizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoOptimizer</span></code></a>.
+Movement, social interaction, and step-size handling are supplied as separate
+strategies:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoMovementSupport" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoMovementSupport"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoMovementSupport</span></code></a>
+creates tumble directions and moved candidates. The built-in real-valued
+implementation is
+<a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoMovementSupportReal" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoMovementSupportReal"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoMovementSupportReal</span></code></a>.</p></li>
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoSwarmingSupportIdle" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoSwarmingSupportIdle"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoSwarmingSupportIdle</span></code></a>
+disables social interaction. For distance-based attraction and repulsion,
+use
+<a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoSwarmingSupportReal" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoSwarmingSupportReal"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoSwarmingSupportReal</span></code></a>.</p></li>
+<li><p><a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoStepSizeSupportFixed" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoStepSizeSupportFixed"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoStepSizeSupportFixed</span></code></a>
+keeps one step size. The adaptive alternative is
+<a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoStepSizeSupportAdaptive" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoStepSizeSupportAdaptive"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoStepSizeSupportAdaptive</span></code></a>.</p></li>
+</ul>
+<p>The package also exports the abstract support classes and
+<a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html#uo.algorithm.metaheuristic.bacterial_foraging.BfoOptimizerConstructionParameters" title="uo.algorithm.metaheuristic.bacterial_foraging.BfoOptimizerConstructionParameters"><code class="xref py py-class docutils literal notranslate"><span class="pre">BfoOptimizerConstructionParameters</span></code></a>.</p>
+</section>
+<section id="algorithm-steps">
+<h2>Algorithm steps<a class="headerlink" href="#algorithm-steps" title="Link to this heading"></a></h2>
+<p class="rubric">Chemotaxis and swimming</p>
+<p>One optimizer iteration performs one chemotactic sweep over the population.
+For each bacterium, BFO generates a tumble direction and evaluates a moved
+candidate. If the candidate improves the effective fitness, it becomes the
+current bacterium and the same direction is used for up to <code class="docutils literal notranslate"><span class="pre">swim_length</span></code>
+more moves. A rejected move ends that bacterium’s swim. Every candidate
+evaluation increments the optimizer’s <code class="docutils literal notranslate"><span class="pre">evaluation</span></code> counter.</p>
+<p class="rubric">Health and effective fitness</p>
+<p>For one chemotactic sweep, a bacterium’s health is the sum of the effective
+fitness values encountered during its movement. With idle swarming, effective
+fitness is the solution’s fitness. With real swarming, the interaction value
+is added temporarily for movement decisions and health calculation. It is not
+written back to the solution.</p>
+<p class="rubric">Reproduction</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">chemotactic_steps</span></code> sweeps, bacteria are ranked by health. The
+healthiest half is retained, and each retained bacterium is copied once to
+restore the configured population size. Health and step sizes are copied with
+the parent.</p>
+<p class="rubric">Elimination and dispersal</p>
+<p>After <code class="docutils literal notranslate"><span class="pre">reproduction_steps</span></code> reproduction events, each bacterium is considered
+independently. With probability <code class="docutils literal notranslate"><span class="pre">elimination_dispersal_probability</span></code>, it is
+replaced by a newly randomized and evaluated bacterium. The replacement starts
+with zero health and the configured initial step size. The separate global
+best is kept when a live bacterium is dispersed.</p>
+<p class="rubric">Parameters</p>
+<p><code class="docutils literal notranslate"><span class="pre">BfoOptimizer</span></code> accepts the following arguments:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">movement_support</span></code>: movement strategy for the solution representation.
+The built-in real strategy expects a <code class="docutils literal notranslate"><span class="pre">list[float]</span></code> or
+<code class="docutils literal notranslate"><span class="pre">tuple[float,</span> <span class="pre">...]</span></code> and inclusive lower and upper bounds for each
+dimension.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">swarming_support</span></code>: idle or distance-based social interaction strategy.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">step_size_support</span></code>: fixed or adaptive chemotactic step-size strategy.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">population_size</span></code>: even number of bacteria, at least two.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chemotactic_steps</span></code>: number of sweeps before reproduction.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">swim_length</span></code>: maximum number of accepted swim moves after a tumble. It
+may be zero.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reproduction_steps</span></code>: number of reproduction events before dispersal.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elimination_dispersal_events</span></code>: number of completed dispersal events
+before natural termination.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elimination_dispersal_probability</span></code>: independent replacement probability
+for each bacterium, in <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">finish_control</span></code>: evaluation, iteration, and/or time stopping criteria.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">problem</span></code>: concrete single-objective
+<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">Problem</span></code></a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">solution_template</span></code>: concrete
+<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solution</span></code></a> used to initialize and copy
+bacteria.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">output_control</span></code>: optional output configuration.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">random_seed</span></code>: optional seed for BFO’s private random generator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">additional_statistics_control</span></code>: optional statistics configuration.</p></li>
+</ul>
+<p class="rubric">Fixed and adaptive step sizes</p>
+<p><code class="docutils literal notranslate"><span class="pre">BfoStepSizeSupportFixed(step_size)</span></code> uses the same positive step size for
+all movements. <code class="docutils literal notranslate"><span class="pre">BfoStepSizeSupportAdaptive</span></code> takes an initial step size,
+positive minimum and maximum bounds, and increase and decrease factors. After
+an accepted move it applies <code class="docutils literal notranslate"><span class="pre">increase_factor</span></code>. After a rejected move it
+applies <code class="docutils literal notranslate"><span class="pre">decrease_factor</span></code>. The result is clamped to the configured bounds.</p>
+<p>The adaptive value is stored separately for each bacterium. It changes the
+chemotactic step size, not the configured <code class="docutils literal notranslate"><span class="pre">swim_length</span></code>.</p>
+<p class="rubric">Idle and real swarming</p>
+<p><code class="docutils literal notranslate"><span class="pre">BfoSwarmingSupportIdle</span></code> returns zero for every interaction. This is the
+simplest choice when only the problem fitness should guide the search.</p>
+<p><code class="docutils literal notranslate"><span class="pre">BfoSwarmingSupportReal</span></code> calls the solution’s
+<code class="docutils literal notranslate"><span class="pre">representation_distance</span></code> method and uses four parameters:
+<code class="docutils literal notranslate"><span class="pre">attractant_depth</span></code>, <code class="docutils literal notranslate"><span class="pre">attractant_width</span></code>, <code class="docutils literal notranslate"><span class="pre">repellent_height</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">repellent_width</span></code>. Its result is a temporary adjustment to the effective
+fitness and is not stored in the solution.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<p>The following example uses bounded real-vector movement. <code class="docutils literal notranslate"><span class="pre">problem</span></code> and
+<code class="docutils literal notranslate"><span class="pre">solution_template</span></code> must be concrete application classes whose solution
+representation is a list or tuple of real values:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">uo.algorithm.metaheuristic.bacterial_foraging</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">BfoOptimizer</span><span class="p">,</span>
+    <span class="n">BfoMovementSupportReal</span><span class="p">,</span>
+    <span class="n">BfoStepSizeSupportAdaptive</span><span class="p">,</span>
+    <span class="n">BfoSwarmingSupportIdle</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">uo.algorithm.metaheuristic.finish_control</span><span class="w"> </span><span class="kn">import</span> <span class="n">FinishControl</span>
+
+<span class="n">optimizer</span> <span class="o">=</span> <span class="n">BfoOptimizer</span><span class="p">(</span>
+    <span class="n">movement_support</span><span class="o">=</span><span class="n">BfoMovementSupportReal</span><span class="p">(</span>
+        <span class="n">lower_bounds</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">5.0</span><span class="p">),</span>
+        <span class="n">upper_bounds</span><span class="o">=</span><span class="p">(</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">),</span>
+    <span class="p">),</span>
+    <span class="n">swarming_support</span><span class="o">=</span><span class="n">BfoSwarmingSupportIdle</span><span class="p">(),</span>
+    <span class="n">step_size_support</span><span class="o">=</span><span class="n">BfoStepSizeSupportAdaptive</span><span class="p">(</span>
+        <span class="n">initial_step_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+        <span class="n">minimum_step_size</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+        <span class="n">maximum_step_size</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">population_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+    <span class="n">chemotactic_steps</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+    <span class="n">swim_length</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">reproduction_steps</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">elimination_dispersal_events</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">elimination_dispersal_probability</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
+    <span class="n">finish_control</span><span class="o">=</span><span class="n">FinishControl</span><span class="p">(</span>
+        <span class="n">criteria</span><span class="o">=</span><span class="s2">&quot;evaluations&quot;</span><span class="p">,</span>
+        <span class="n">evaluations_max</span><span class="o">=</span><span class="mi">10_000</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">problem</span><span class="o">=</span><span class="n">problem</span><span class="p">,</span>
+    <span class="n">solution_template</span><span class="o">=</span><span class="n">solution_template</span><span class="p">,</span>
+    <span class="n">random_seed</span><span class="o">=</span><span class="mi">2026</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">best_solution</span> <span class="o">=</span> <span class="n">optimizer</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="stopping-cost-and-limitations">
+<h2>Stopping, cost, and limitations<a class="headerlink" href="#stopping-cost-and-limitations" title="Link to this heading"></a></h2>
+<p>BFO stops when the configured number of elimination-dispersal events has been
+completed or when the inherited
+<code class="xref py py-class docutils literal notranslate"><span class="pre">FinishControl</span></code> stops it.
+Evaluation limits are checked before candidate evaluations, including swim
+moves and dispersed replacements. This means that the last sweep may be
+partial when the evaluation limit is reached.</p>
+<p>Initializing the population costs <code class="docutils literal notranslate"><span class="pre">population_size</span></code> evaluations. A
+chemotactic sweep costs between <code class="docutils literal notranslate"><span class="pre">population_size</span></code> and
+<code class="docutils literal notranslate"><span class="pre">population_size</span> <span class="pre">*</span> <span class="pre">(swim_length</span> <span class="pre">+</span> <span class="pre">1)</span></code> candidate evaluations, depending on
+how many swim moves are accepted. Each dispersed replacement adds one
+evaluation.</p>
+<p>The built-in movement strategy supports only bounded list and tuple real
+vectors. Binary, permutation, and multi-objective representations need another
+movement or optimizer strategy. Swim length is fixed, reproduction duplicates
+the healthier half, dispersal probability is not quality-dependent, and the
+implementation does not include a hybrid local-search step.</p>
+</section>
+<section id="api-reference">
+<h2>API reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h2>
+<p>See <a class="reference internal" href="uo.algorithm.metaheuristic.bacterial_foraging.html"><span class="doc">uo.algorithm.metaheuristic.bacterial_foraging package</span></a> for the complete
+autodoc reference and exported classes.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Vladimir Filipovic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

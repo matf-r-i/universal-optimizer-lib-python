@@ -43,7 +43,7 @@ proto-plus==1.27.0
 protobuf==6.33.5
 pyasn1==0.6.4
 pyasn1_modules==0.4.2
-Pygments==2.19.2
+Pygments==2.20.0
 pylint==3.3.9
 PyQt5==5.15.11
 PyQt5-Qt5==5.15.2

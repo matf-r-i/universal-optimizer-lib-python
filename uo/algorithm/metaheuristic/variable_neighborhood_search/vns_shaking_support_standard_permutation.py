@@ -1,5 +1,6 @@
 """
 .. _py_vns_shaking_support_standard_permutation:
+
 The :mod:`~uo.algorithm.metaheuristic.variable_neighborhood_search.vns_shaking_support_standard_permutation`
 contains class
 :class:`~uo.algorithm.metaheuristic.variable_neighborhood_search.VnsShakingSupportStandardPermutation`,
@@ -8,7 +9,6 @@ with repetition, kept within a `list[int]`.
 """
 
 
-from copy import deepcopy
 import random
 from typing import TypeVar
 

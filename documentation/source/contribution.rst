@@ -31,6 +31,22 @@ Contribution is encouraged in designing novel optimization methods. Requirements
         - All developed code should be covered with unit test, and test coverage rate should be not less than 80%. 
 
 
+    a.7. :ref:`Permutation representation <Algorithm_Permutation_Representation>` support for the existing metaheuristics:
+
+        20. Implementation of neighborhood structures with permutation representation, for Simulated Annealing (in class :class:`~uo.algorithm.metaheuristic.simulated_annealing.SaNeighborhoodPermutation`, using `list[int]` predefined type) - [NenadPesic]_
+
+        21. Implementation of shaking with permutation representation, for Variable Neighborhood Search (in class :class:`~uo.algorithm.metaheuristic.variable_neighborhood_search.VnsShakingSupportStandardPermutation`) - [NenadPesic]_
+
+        22. Implementation of local searches with permutation representation, first and best improvement variant, for Variable Neighborhood Search (in classes: :class:`~uo.algorithm.metaheuristic.variable_neighborhood_search.VnsLocalSearchSupportStandardFirstImprovementPermutation`, :class:`~uo.algorithm.metaheuristic.variable_neighborhood_search.VnsLocalSearchSupportStandardBestImprovementPermutation`) - [NenadPesic]_
+
+        23. Implementation of GA mutation with permutation representation, performed as a swap of two positions (in class :class:`~uo.algorithm.metaheuristic.genetic_algorithm.GaMutationSupportSwapPermutation`) - [NenadPesic]_
+
+        24. Implementation of GA precedence preservative crossover (PPX) of Bierwirth, Mattfeld and Kopfer, with permutation representation (in class :class:`~uo.algorithm.metaheuristic.genetic_algorithm.GaCrossoverSupportPpxPermutation`) - [NenadPesic]_
+
+        25. Implementation of GA tournament selection, which is indifferent to the scale and the sign of the fitness (in class :class:`~uo.algorithm.metaheuristic.genetic_algorithm.GaSelectionTournament`) - [NenadPesic]_
+
+        26. Correction of the imports within the temperature classes of the Simulated Annealing, which made those classes impossible to import from outside their own directory - [NenadPesic]_
+
 Contributors
 ============
 
@@ -106,3 +122,5 @@ Contributor List
 .. [MarkoLazarevic] Marko Lazarević, `<https://github.com/marko-lazarevic>`_ e-mail: mi21098@alas.matf.bg.ac.rs
 
 .. [StojanKostic] Stojan Kostić, `<https://github.com/Stojan-Kole>`_ e-mail: mi21131@alas.matf.bg.ac.rs
+
+.. [NenadPesic] Nenad Pešić, `<https://github.com/DrColosso42>`_ e-mail: mi22062@alas.matf.bg.ac.rs

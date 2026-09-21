@@ -1,3 +1,4 @@
+import random
 import unittest
 
 from uo.algorithm.metaheuristic.variable_neighborhood_search.vns_shaking_support_standard_permutation \
@@ -50,11 +51,19 @@ class TestVnsShakingSupportStandardPermutation(unittest.TestCase):
     def test_shaking_yields_a_different_permutation_and_counts_evaluation(self):
         solution = self.make_solution(list(self.representation))
         optimizer = OptimizerStub()
-        self.assertTrue(self.support.shaking(3, self.problem, solution, optimizer))
+        self.assertTrue(self.support.shaking(1, self.problem, solution, optimizer))
         self.assertEqual(sorted(solution.representation), sorted(self.representation))
         self.assertNotEqual(solution.representation, self.representation)
         self.assertEqual(optimizer.evaluation, 1)
         self.assertEqual(optimizer.written, ['before_evaluation', 'after_evaluation'])
+
+    def test_shaking_with_several_swaps_preserves_the_multiset(self):
+        random.seed(3)
+        for _ in range(200):
+            solution = self.make_solution(list(self.representation))
+            optimizer = OptimizerStub()
+            self.assertTrue(self.support.shaking(3, self.problem, solution, optimizer))
+            self.assertEqual(sorted(solution.representation), sorted(self.representation))
 
     def test_shaking_is_refused_when_optimizer_should_finish(self):
         solution = self.make_solution(list(self.representation))

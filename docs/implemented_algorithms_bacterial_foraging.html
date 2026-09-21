@@ -162,7 +162,8 @@ The built-in real strategy expects a <code class="docutils literal notranslate">
 dimension.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">swarming_support</span></code>: idle or distance-based social interaction strategy.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">step_size_support</span></code>: fixed or adaptive chemotactic step-size strategy.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">population_size</span></code>: even number of bacteria, at least two.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">population_size</span></code>: number of bacteria, at least two. Odd values are
+rounded up to the next even number because reproduction operates in pairs.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">chemotactic_steps</span></code>: number of sweeps before reproduction.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">swim_length</span></code>: maximum number of accepted swim moves after a tumble. It
 may be zero.</p></li>
@@ -173,9 +174,9 @@ before natural termination.</p></li>
 for each bacterium, in <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">finish_control</span></code>: evaluation, iteration, and/or time stopping criteria.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">problem</span></code>: concrete single-objective
-<a class="reference internal" href="uo.target_problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">Problem</span></code></a>.</p></li>
+<a class="reference internal" href="uo.problem.html#uo.problem.problem.Problem" title="uo.problem.problem.Problem"><code class="xref py py-class docutils literal notranslate"><span class="pre">Problem</span></code></a>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">solution_template</span></code>: concrete
-<a class="reference internal" href="uo.target_solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solution</span></code></a> used to initialize and copy
+<a class="reference internal" href="uo.solution.html#uo.solution.solution.Solution" title="uo.solution.solution.Solution"><code class="xref py py-class docutils literal notranslate"><span class="pre">Solution</span></code></a> used to initialize and copy
 bacteria.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">output_control</span></code>: optional output configuration.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">random_seed</span></code>: optional seed for BFO’s private random generator.</p></li>

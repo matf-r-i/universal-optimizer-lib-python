@@ -20,6 +20,30 @@ uo.algorithm.metaheuristic.variable\_neighborhood\_search.vns\_optimizer module
    :undoc-members:
    :show-inheritance:
 
+uo.algorithm.metaheuristic.variable\_neighborhood\_search.vns\_shaking\_support\_standard\_permutation module
+--------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: uo.algorithm.metaheuristic.variable_neighborhood_search.vns_shaking_support_standard_permutation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uo.algorithm.metaheuristic.variable\_neighborhood\_search.vns\_ls\_support\_standard\_fi\_permutation module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: uo.algorithm.metaheuristic.variable_neighborhood_search.vns_ls_support_standard_fi_permutation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+uo.algorithm.metaheuristic.variable\_neighborhood\_search.vns\_ls\_support\_standard\_bi\_permutation module
+------------------------------------------------------------------------------------------------------------------
+
+.. automodule:: uo.algorithm.metaheuristic.variable_neighborhood_search.vns_ls_support_standard_bi_permutation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

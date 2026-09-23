@@ -28,6 +28,14 @@ uo.algorithm.metaheuristic.simulated\_annealing.sa\_temperature\_support\_expone
    :undoc-members:
    :show-inheritance:
 
+uo.algorithm.metaheuristic.simulated\_annealing.sa\_neighborhood\_permutation module
+--------------------------------------------------------------------------------------
+
+.. automodule:: uo.algorithm.metaheuristic.simulated_annealing.sa_neighborhood_permutation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

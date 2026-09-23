@@ -9,7 +9,7 @@ sys.path.append(directory.parent)
 sys.path.append(directory.parent.parent)
 sys.path.append(directory.parent.parent.parent)
 
-from sa_temperature import SaTemperature
+from uo.algorithm.metaheuristic.simulated_annealing.sa_temperature import SaTemperature
 
 class SaTemperatureConst(SaTemperature):
     def calculate(self, k: int) -> float:

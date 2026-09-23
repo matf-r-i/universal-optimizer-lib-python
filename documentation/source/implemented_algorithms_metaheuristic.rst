@@ -17,4 +17,6 @@ Implemented metaheuristic algorithms
 
     implemented_algorithms_aco
 
+    implemented_algorithms_bacterial_foraging
+    
     implemented_algorithms_permutation_representation

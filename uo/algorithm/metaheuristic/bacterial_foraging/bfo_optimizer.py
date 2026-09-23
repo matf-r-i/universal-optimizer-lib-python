@@ -430,12 +430,13 @@ class BfoOptimizer(PopulationBasedMetaheuristic):
             return
 
         self.__chemotactic_step = 0
+        self._reproduce()
+
         self.__reproduction_step += 1
         if self.__reproduction_step < self.reproduction_steps:
             return
 
         self.__reproduction_step = 0
-        self._reproduce()
         if self._eliminate_and_disperse():
             self.__elimination_dispersal_step += 1
 
